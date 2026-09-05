@@ -1,0 +1,11 @@
+# Never commit anything derived from the game.
+work/
+build/
+*.iso
+*.cvm
+*.CVM
+*.CMP
+*.bin
+workbook*.csv
+__pycache__/
+tools/cricmp
