@@ -20,7 +20,8 @@ from tkinter import messagebox, ttk
 
 ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 ENGLISH = os.path.join(ROOT, "translation", "english.json")
-FIELDS = ["id", "kind", "speaker", "budget_bytes", "japanese", "english", "notes"]
+FIELDS = ["id", "kind", "speaker", "budget_bytes", "caption",
+          "japanese", "english", "notes"]
 
 
 def sjis_len(s):
@@ -85,6 +86,15 @@ class Editor(tk.Tk):
         self.en.bind("<KeyRelease>", lambda _: self._count())
         self.budget = ttk.Label(right, text="")
         self.budget.pack(anchor="w", pady=4)
+        self.caption = tk.BooleanVar(value=True)
+        ttk.Checkbutton(right, variable=self.caption,
+                        text="show this line on screen (subtitle)",
+                        command=self._apply).pack(anchor="w", pady=(6, 0))
+        ttk.Label(right, wraplength=320, foreground="#555",
+                  text="Most in-mission radio dialogue is spoken but not "
+                       "displayed. Ticking this subtitles it. Captions get "
+                       "four lines of 28 characters."
+                  ).pack(anchor="w")
         ttk.Label(right, text="Notes").pack(anchor="w", pady=(10, 0))
         self.note = tk.Text(right, height=4, wrap="word")
         self.note.pack(fill="x")
@@ -134,6 +144,7 @@ class Editor(tk.Tk):
         self.en.insert("1.0", r["english"])
         self.note.delete("1.0", "end")
         self.note.insert("1.0", r["notes"])
+        self.caption.set((r.get("caption") or "on").lower() != "off")
         self._count()
 
     def _count(self):
@@ -155,6 +166,7 @@ class Editor(tk.Tk):
             return
         self.current["english"] = self.en.get("1.0", "end-1c")
         self.current["notes"] = self.note.get("1.0", "end-1c")
+        self.current["caption"] = "on" if self.caption.get() else "off"
         self._refresh()
 
     def _save(self):
@@ -170,8 +182,13 @@ class Editor(tk.Tk):
         if os.path.exists(ENGLISH):
             en = json.load(open(ENGLISH, encoding="utf-8"))
         for r in self.rows:
-            if r["english"].strip():
-                en[r["id"]] = {"en": r["english"], "note": r["notes"]}
+            if not r["english"].strip():
+                continue
+            # The caption preference travels with the translated line. Turning
+            # captions on wholesale is `tools/build.py --subtitles`, so there
+            # is no need to record 2,675 defaults here.
+            en[r["id"]] = {"en": r["english"], "note": r["notes"],
+                           "caption": (r.get("caption") or "on").lower() != "off"}
         json.dump(en, open(ENGLISH, "w", encoding="utf-8"),
                   indent=2, ensure_ascii=False)
         msg = f"Saved {self.path}\nand {len(en)} strings to translation/english.json"

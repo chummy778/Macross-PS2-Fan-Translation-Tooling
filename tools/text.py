@@ -30,6 +30,17 @@ import strtab
 class Unit:
     __slots__ = ("uid", "kind", "offset", "budget", "text", "speaker")
 
+    # A record id is six characters and every one of them is load-bearing:
+    #
+    #     bytes 0-1  display priority   (STR_GetDispPri)
+    #     byte  2    caption attribute  (STR_GetDispAttr)
+    #     bytes 3-5  voice index        (STR_GetIdx, spaces mean zero)
+    #
+    # Byte 2 is what decides whether a spoken line also appears on screen.
+    # `STR_GetDispAttr` returns 1/2/3 for '1'/'2'/'3' and 0 for anything
+    # else, and `NAVI_DispNarrationExec` draws the caption only when bit 0
+    # of that value is set. So '1' means captioned and '0' means voice only.
+
     def __init__(self, uid, kind, offset, budget, text, speaker):
         self.uid = uid
         self.kind = kind          # "record" | "string"
@@ -41,6 +52,16 @@ class Unit:
     @property
     def needs_translation(self):
         return any(c > "\x7f" for c in self.text)
+
+    @property
+    def captioned(self):
+        """True if this line is shown on screen as well as spoken."""
+        return self.kind == "record" and self.speaker[2] in "13"
+
+    @property
+    def id_offset(self):
+        """Offset of the 6-character id, which sits just before the text."""
+        return self.offset - 6
 
 
 def _trailing_nuls(blob, end, limit):
@@ -98,6 +119,39 @@ def read_at(blob, us):
         except UnicodeDecodeError:
             out[u.uid] = None
     return out
+
+
+def set_captions(blob, wanted, ref=None):
+    """Turn captions on or off per record: {uid: bool}.
+
+    This is a one-byte edit per line and needs no code patch -- the engine
+    already renders the caption, times it to the voice clip via
+    `SND_GetVoicePlayTime`, and holds it for exactly that long. The developers
+    built the whole thing and then marked most in-mission radio lines as voice
+    only. Flipping byte 2 of the id turns them back on.
+
+    Nothing else reads byte 2, so this does not disturb the voice lookup or
+    the display priority.
+
+    Pass `ref` -- the unit list parsed from the *untranslated* file -- when
+    `blob` has already been translated. The record parser keeps only entries
+    containing Japanese (that is how it tells records from binary data that
+    happens to decode), so re-parsing a translated file silently loses every
+    line that has been done, and those are exactly the lines a translator
+    most wants captioned.
+    """
+    b = bytearray(blob)
+    by_id = {u.uid: u for u in (ref if ref is not None else units(blob))}
+    changed = 0
+    for uid, on in wanted.items():
+        u = by_id.get(uid)
+        if u is None or u.kind != "record":
+            continue
+        if u.captioned == bool(on):
+            continue
+        b[u.id_offset + 2] = ord("1") if on else ord("0")
+        changed += 1
+    return bytes(b), changed
 
 
 def apply(blob, edits):

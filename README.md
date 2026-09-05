@@ -19,11 +19,28 @@ committed.
   replaced with traceable placeholders, booted, and checked on screen.
 - Line breaks are yours to place: the game wraps on character count, so an
   explicit newline is how you stop it splitting a word.
+- **Spoken radio dialogue can be subtitled** with `--subtitles` — 1,811 lines
+  the game says out loud but never shows.
 - **No size ceiling.** `BOOTDAT.CMP` only gets 97 sectors on the disc and
   `JPN.CVM` is packed solid, which is not enough — translating the short,
   repetitive lines first actually makes the compressed file *grow*. When that
   happens `tools/build.py` rebuilds the container with room to spare, so you
   never have to shorten a sentence to make a build fit.
+
+### Subtitles for the spoken radio dialogue
+
+During missions the pilots talk over the radio, and the game speaks those
+lines without showing them. It turns out the engine already has the whole
+caption system — text, window and timing — and simply marks most in-mission
+lines as voice only. `tools/build.py --subtitles` turns them on.
+
+| Without `--subtitles` | With `--subtitles` |
+|---|---|
+| ![Radio line, spoken only](docs/shots/caption-before.png) | ![Radio line, subtitled](docs/shots/caption-after.png) |
+
+It is a **one-byte edit per line**, not a code patch, and the timing is the
+game's own: the caption is held for exactly the length of the voice clip,
+measured by `SND_GetVoicePlayTime`. **1,811 lines** are affected.
 
 ### Before / after
 
@@ -64,6 +81,7 @@ python3 tools/verify.py "Macross (Japan).iso"          # is this the right image
 python3 tools/make_workbook.py "Macross (Japan).iso"   # -> work/workbook.csv
 python3 tools/editor.py                                # translate (or use a spreadsheet)
 python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso"
+python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso" --subtitles
 ```
 
 `make_workbook.py` extracts the Japanese from *your* disc and seeds the
@@ -95,6 +113,12 @@ to do it badly. **2,449 lines are waiting in the workbook.**
 
 - **The game wraps text on character count, not word boundaries**, so a long
   line can break mid-word. Keep lines short or place explicit newlines.
+- **Radio captions get four lines of 28 characters.** The window is that size
+  whether or not you fill it, so a two-line caption leaves a visible gap.
+  Write to fill it.
+- Subtitles are only lightly playtested — the tutorial mission. Enabling all
+  1,811 lines is the blunt setting; some may be silent by design, and the
+  caption window clips the lower HUD slightly.
 - **Stage title cards, the logo and 2D menu art are textures** (`SBTTL_*`,
   `MENU2D`, `TTL`, `LOGO` — TIM2 format), not text. Translating them is an
   art job this tooling does not cover.

@@ -324,6 +324,32 @@ every index after it, which would silently re-point an existing translation
 at the wrong lines. This happened here — the fix arrived after the first
 translations were written — and offsets made it a non-event.
 
+### Captions: the engine already had them
+
+In-mission radio dialogue is spoken but not shown. The whole caption system
+exists and is simply switched off per line:
+
+```
+MIS_PlayVoice -> NAVI_PlayVoice          queues the line, asks
+                                         SND_GetVoicePlayTime for its length
+navi_Chrw     -> STR_GetDispAttr(id)     reads byte 2 of the record id
+NAVI_DispNarrationExec                   draws the portrait unconditionally,
+                                         the caption only if bit 0 is set
+```
+
+`STR_GetDispAttr` returns 1/2/3 for `'1'`/`'2'`/`'3'` and 0 otherwise, and the
+caption is drawn when bit 0 of that is set. So **`'1'` in byte 2 means
+captioned, `'0'` means voice only** — 864 records ship captioned, 1,811 do
+not. Flipping that byte is all it takes; the timing is the engine's own.
+
+Attribute `2` and `3` are unexplored. `3` also has bit 0 set and rendered
+identically to `1` in testing, so it is not a second window style.
+
+The caption window is a **fixed** preset in `navi_dispWinMsg`: text area
+280x88 at (180, 287), drawn inside a 300x100 box. At the native 32px glyph
+size that is four lines of 28 characters, and it does not shrink to fit —
+a two-line caption leaves a visible empty band.
+
 ### What is text and what is art
 
 Replacing all 2,739 Japanese strings leaves the **stage title card still

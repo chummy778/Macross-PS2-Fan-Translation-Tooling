@@ -72,6 +72,60 @@ volume size and the CVMH size updated, and the whole thing relocated into the
 **If the data does not fit the disc, change the disc.** Asking a translator
 to trim sentences to satisfy a compressor is solving the wrong problem.
 
+## The feature that was already there
+
+The radio dialogue during missions is spoken and not displayed, and the
+obvious reading of that is "the game has no subtitle system, so build one" --
+extract the voice clips, get them transcribed, hack in a renderer, and solve
+the synchronisation. That would have been weeks of work and it was all
+unnecessary.
+
+Following `MIS_PlayVoice` through the symbols took about an hour and found
+the opposite: the engine has a complete caption system. `NAVI_PlayVoice`
+queues the line and asks `SND_GetVoicePlayTime` how long the clip runs;
+`NAVI_DispNarrationExec` draws the portrait unconditionally and the caption
+behind two gates; `navi_Chrw` sets the deciding flag from
+`STR_GetDispAttr(id)` -- which reads **byte 2 of the record id** and nothing
+else. The developers built subtitles and then marked most in-mission lines as
+voice only.
+
+So the whole feature is one byte per line, the text was already sitting in
+the script file, and the timing is the engine's. **Read the code before
+believing a feature is missing.** "The game does not do X" often means "the
+game does not do X *here*".
+
+## The dead end: making the caption font smaller
+
+The captions render at a native 32x32 glyph, which is large. Shrinking them
+looked easy -- `setSpr` builds each glyph quad as `(x, y)` to
+`(x + w*scale, y + h*scale)`, and `createHn` sets that scale to 1.0 in a
+single `lui`. Two bytes.
+
+It worked, and it looked bad, because the font is a **bitmap**. A 32px glyph
+drawn at 24px (0.75) drops one pixel in four unevenly. 0.5 is an exact 2:1
+downsample and is genuinely crisp, but too small to read while flying.
+
+Bilinear filtering was the obvious remedy and cost three failed attempts:
+`spr_MakeCtxt` (patched it, no effect -- the font dispatches through a
+runtime pointer table to `SPRGFX`, not there), `gfxSetMaterial` (the filter
+is a parameter on the stack, not a global), and `gp-0x6a44` (that is the
+framebuffer filter, read only by `gfxFlip`).
+
+The thing that ended it was measuring the *outcome* instead of hunting for
+the code: forcing bilinear at the emulator level gave 210 distinct grey
+levels against 179, and an antialiased-to-solid edge ratio of 3.37 against
+3.05. About 10% more softening -- nowhere near enough, and only available on
+a hardware renderer that has blending artefacts in this game.
+
+Two lessons, both cheap:
+
+- **Test the outcome before hunting for the mechanism.** One emulator setting
+  answered a question three rounds of reverse engineering had not.
+- **Verify a visual claim with a measurement before showing it to anyone.**
+  The first "bilinear works" screenshot was indistinguishable from the
+  unpatched one, and a five-second pixel histogram would have caught that. It
+  was the user who spotted it instead.
+
 ## What paid off
 
 **Searching first.** CRICMP is a custom CRI LZ codec; nothing stock touches

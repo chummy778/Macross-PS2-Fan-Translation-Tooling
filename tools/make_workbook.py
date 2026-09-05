@@ -12,6 +12,10 @@ existing work shows up alongside the lines still to do.
 
 Writes `work/workbook.csv`, which is gitignored. Edit it in any spreadsheet
 (or `tools/editor.py`), then feed it to `tools/build.py`.
+
+The `caption` column says whether a line is shown on screen as well as
+spoken. Most in-mission radio dialogue ships as `off`; setting it to `on`
+subtitles that line. `tools/build.py --subtitles` turns them all on at once.
 """
 import argparse
 import csv
@@ -26,7 +30,8 @@ import verify
 from gamedata import CRICMP, need_cricmp, script_blob  # noqa: F401
 
 ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-FIELDS = ["id", "kind", "speaker", "budget_bytes", "japanese", "english", "notes"]
+FIELDS = ["id", "kind", "speaker", "budget_bytes", "caption",
+          "japanese", "english", "notes"]
 
 
 def load_english(path):
@@ -60,9 +65,12 @@ def main():
         w.writeheader()
         for u in us:
             e = en.get(u.uid, {})
+            cap = e.get("caption", u.captioned)
             w.writerow({
                 "id": u.uid, "kind": u.kind, "speaker": u.speaker,
-                "budget_bytes": u.budget, "japanese": u.text,
+                "budget_bytes": u.budget,
+                "caption": "on" if cap else "off",
+                "japanese": u.text,
                 "english": e.get("en", ""), "notes": e.get("note", ""),
             })
     done = sum(1 for u in us if en.get(u.uid, {}).get("en"))

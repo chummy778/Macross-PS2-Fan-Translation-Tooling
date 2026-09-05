@@ -70,6 +70,11 @@ extraction and before patching, and hashes the files the patch depends on
 rather than the whole disc, so a wrong region or a bad dump is distinguishable
 from a re-release.
 
+**C12 — Prefer a data edit to a code patch.** The subtitle feature changes
+one byte per line and leaves the executable untouched, which is why it is
+shippable. The font-size work needed an ELF patch, produced a measurably
+poor result, and was dropped rather than shipped as a risk.
+
 **C11a — A translator is never asked to write shorter English to make the
 build fit.** If the data does not fit the disc, the disc is what changes.
 Byte budgets per string are unavoidable (text is written in place); the
@@ -90,6 +95,7 @@ the parser here was corrected mid-project and gained 660 records.
 - Emulator fully scriptable: boot, memory, input, screenshots, savestate
   disassembly and call stacks
 - End-to-end patcher with verification, and a translation editor
+- Spoken radio dialogue subtitled — 1,811 lines, one byte each, no code patch
 - The container's size ceiling removed: `JPN.CVM` is rebuilt and relocated
   when the script outgrows its 97 sectors, so no translation has to be cut
   short to make a build fit
@@ -100,5 +106,9 @@ the parser here was corrected mid-project and gained 660 records.
 - Textures: stage title cards, logo, 2D menu art (TIM2). Art job, out of scope.
 - Growing a string beyond its slot. Not needed at 2.12x, and would require
   rewriting the pool offset tables.
-- Audio dialogue. Radio transmissions during gameplay are voiced and
-  unsubtitled; subtitling them is a separate piece of work.
+- Playtesting the subtitles beyond the tutorial mission. All 1,811 lines can
+  be captioned, but some may be silent by design and the caption window
+  clips the lower HUD slightly.
+- Making the caption font smaller. Investigated and abandoned: the font is a
+  32x32 bitmap, so any non-integer downscale aliases, and forced bilinear
+  filtering measured only ~10% more edge softening. See the journal.

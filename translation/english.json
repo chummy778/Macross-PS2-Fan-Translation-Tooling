@@ -1158,5 +1158,9 @@
   "rec-01de00": {
     "en": "1 ships left!",
     "note": "HUD / radio / order vocabulary"
+  },
+  "rec-0058e0": {
+    "en": "This ship is engaging\nalien forces.\nThis is not a drill.\nRepeat, this is not a drill.",
+    "note": "demo line, shows the radio subtitle feature"
   }
 }

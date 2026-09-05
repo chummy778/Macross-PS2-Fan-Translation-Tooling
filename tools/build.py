@@ -3,10 +3,16 @@
 
     python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso"
     python3 tools/build.py in.iso out.iso --csv work/workbook.csv
+    python3 tools/build.py in.iso out.iso --subtitles
 
 Translations come from `translation/english.json`; a workbook CSV, if given,
 takes precedence line by line, so a translator can try edits without
 committing them first.
+
+`--subtitles` additionally captions the in-mission radio dialogue, which the
+game speaks but does not display. That is a one-byte edit per line, not a
+code patch -- see `tools/text.py`. Individual lines can be overridden with
+the workbook's `caption` column.
 
 The source image is opened read-only and never written -- the output is a
 copy. Every replacement is checked against its byte budget before anything
@@ -31,20 +37,30 @@ import verify
 from make_workbook import CRICMP, ROOT, need_cricmp, script_blob
 
 
+TRUE = {"1", "on", "yes", "true", "y"}
+FALSE = {"0", "off", "no", "false", "n"}
+
+
 def load_edits(english_path, csv_path):
-    edits, notes = {}, {}
+    """(text edits, caption overrides) from the shipped English and a CSV."""
+    edits, caps = {}, {}
     if os.path.exists(english_path):
         for uid, e in json.load(open(english_path, encoding="utf-8")).items():
             if e.get("en"):
                 edits[uid] = e["en"]
-                notes[uid] = "english.json"
+            if "caption" in e:
+                caps[uid] = bool(e["caption"])
     if csv_path:
         with open(csv_path, encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 if row.get("english", "").strip():
                     edits[row["id"]] = row["english"]
-                    notes[row["id"]] = os.path.basename(csv_path)
-    return edits, notes
+                v = (row.get("caption") or "").strip().lower()
+                if v in TRUE:
+                    caps[row["id"]] = True
+                elif v in FALSE:
+                    caps[row["id"]] = False
+    return edits, caps
 
 
 def check_budgets(blob, edits):
@@ -74,6 +90,8 @@ def main():
     ap.add_argument("--csv", default=None)
     ap.add_argument("--english",
                     default=os.path.join(ROOT, "translation/english.json"))
+    ap.add_argument("--subtitles", action="store_true",
+                    help="also caption the spoken in-mission radio dialogue")
     args = ap.parse_args()
 
     if os.path.abspath(args.iso) == os.path.abspath(args.out):
@@ -87,8 +105,8 @@ def main():
     need_cricmp()
     before = os.path.getsize(args.iso)
     blob = script_blob(args.iso)
-    edits, _ = load_edits(args.english, args.csv)
-    if not edits:
+    edits, caps = load_edits(args.english, args.csv)
+    if not edits and not (caps or args.subtitles):
         sys.exit("no translated lines found -- nothing to build")
 
     problems = check_budgets(blob, edits)
@@ -98,6 +116,13 @@ def main():
         sys.exit("nothing was written")
 
     patched, n = gametext.apply(blob, edits)
+
+    original = gametext.units(blob)
+    wanted = {}
+    if args.subtitles:
+        wanted = {u.uid: True for u in original if u.kind == "record"}
+    wanted.update(caps)                       # explicit per-line wins
+    patched, captioned = gametext.set_captions(patched, wanted, ref=original)
     work = os.path.join(ROOT, "work")
     os.makedirs(work, exist_ok=True)
     dec, cmp_ = os.path.join(work, "_patched.bin"), os.path.join(work, "_patched.cmp")
@@ -138,12 +163,8 @@ def main():
     head = cap - len(data)
     print(f"\n{n} lines written, {len(data)} bytes compressed of {cap} "
           f"available -- {head} bytes spare")
-    if head < 512:
-        print("NOTE: little room left. A partly-translated file compresses "
-              "worse than either the original or a finished translation, so "
-              "this is tightest in the middle of the work and loosens as "
-              "coverage grows. If a line will not fit, shorten wording or "
-              "translate more of the surrounding text.")
+    if captioned:
+        print(f"{captioned} spoken radio lines switched to captioned")
     print("all lines verified by reading them back out of the finished image")
     print(f"{args.out}")
 
