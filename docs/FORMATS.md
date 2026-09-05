@@ -189,6 +189,32 @@ breaks mid-word (`…U.N. Spacy Valkyri / e Corps.`). Translators should keep
 lines short or place explicit `\n` breaks; there is no engine fix for it
 short of patching the renderer.
 
+### The container is full, and the fix is to rebuild it
+
+`JPN.CVM` has **zero spare bytes**: the file is exactly its `0x1800` header
+plus its declared 11,319 sectors, with no gaps between files. `BOOTDAT.CMP`
+gets 97 sectors (198,656 bytes) and cannot grow in place.
+
+`tools/cvmexpand.py` rebuilds the container instead. Two things about this
+disc make it straightforward:
+
+* Inside the CVM, the volume descriptor, both path tables and the root
+  directory occupy sectors 16-21, **below** the first file at sector 22, and
+  there are **no subdirectories**. So widening a file means inserting zeroed
+  sectors and renumbering file extents -- no metadata moves.
+* `ETC.CVM` is 199 MB of zeros, absent from `0FLIST.DIR`, and nothing opens
+  it. The rebuilt container goes there and both outer directory records are
+  repointed so nothing overlaps.
+
+Also updated: the inner PVD volume size (`+80` LE, `+84` BE) and the CVMH's
+own byte size (`+0x20`, big-endian). Everything ISO 9660 stores twice is
+written in both orders -- missing one is a silent corruption.
+
+Verified: all 70 files inside the rebuilt CVM read back byte-identical, the
+outer image is the same size, and the game boots and renders at 59.9 fps from
+the relocated container. `tools/build.py` does this automatically, and only
+when the script actually outgrows its slot.
+
 ### Two different limits, and they fail in opposite directions
 
 Every string is written **in place**, so each one must fit its own slot — and
@@ -202,11 +228,26 @@ measures that allocation from where the next extent starts rather than
 trusting the recorded length — which is worth 416 bytes, and 416 bytes is the
 difference between a translation building and not.
 
-A *partial* translation is the worst case for size: it breaks up the
-repetition the codec was exploiting in the Japanese while adding novel
-English. A full translation compresses far better — the complete placeholder
-build is 145,676 bytes against the original 198,240. So the file getting
-*bigger* is a mid-translation problem that resolves itself as coverage grows.
+What grows the file is not *how much* is translated but **which lines**.
+Measured with `stress/sizesweep.py`:
+
+| translated | compressed |
+|---|---|
+| 0% (original Japanese) | 198,128 |
+| 50% | ~182,000 |
+| 100% | ~151,000 |
+
+Coverage helps monotonically. But the short, highly repetitive lines --
+acknowledgements, the twelve clock bearings, the five turret names, all
+differing by one character -- cost almost nothing compressed, while their
+English replacements are novel text. Translate those first, as any sensible
+person does, and the file **grows**: the 290-string UI-and-HUD translation
+here comes out 262 bytes over the original slot.
+
+Beware measuring this with generated filler. It reuses a small pool of words
+and flatters the codec; the real translation is full of distinct domain
+vocabulary. `sizesweep.py` reports the real `english.json` alongside its
+sweep for exactly this reason.
 
 ### The recorded length must shrink with the data
 

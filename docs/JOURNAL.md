@@ -44,6 +44,34 @@ Two lessons, in order of value:
    named the subsystem exactly. It should have been the *second* thing tried,
    not the twentieth.
 
+## The second trap: measuring the wrong thing
+
+A full placeholder build compressed to 145,676 bytes against the original's
+198,240, so "will a translation fit the disc?" looked settled. It was not.
+Two errors were stacked:
+
+1. **Full coverage does not predict partial coverage.** Translating the short,
+   repetitive lines first -- the menus, the acknowledgements, the twelve clock
+   bearings that differ by one character -- makes the file **grow**. Those
+   lines cost almost nothing compressed; their English replacements are novel
+   text. That is the natural order to work in, and it is the worst case.
+2. **Generated filler flatters the codec.** Lorem ipsum cycles sixty words. A
+   real translation is full of distinct domain vocabulary. The gap is not huge
+   at full coverage (150,522 vs 149,642) but it is exactly what decides
+   whether a partial build fits, and a synthetic sweep never reproduced the
+   failure that the real 290-string translation hit.
+
+`stress/sizesweep.py` now measures both orderings *and* the real
+`english.json`, and says which number to trust.
+
+The fix was not to write shorter English. `JPN.CVM` has zero spare bytes, so
+the container gets rebuilt: sectors inserted, file extents renumbered, the
+volume size and the CVMH size updated, and the whole thing relocated into the
+199 MB that `ETC.CVM` wastes on zeros. The disc had the room all along.
+
+**If the data does not fit the disc, change the disc.** Asking a translator
+to trim sentences to satisfy a compressor is solving the wrong problem.
+
 ## What paid off
 
 **Searching first.** CRICMP is a custom CRI LZ codec; nothing stock touches

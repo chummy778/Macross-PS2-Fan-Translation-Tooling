@@ -19,6 +19,11 @@ committed.
   replaced with traceable placeholders, booted, and checked on screen.
 - Line breaks are yours to place: the game wraps on character count, so an
   explicit newline is how you stop it splitting a word.
+- **No size ceiling.** `BOOTDAT.CMP` only gets 97 sectors on the disc and
+  `JPN.CVM` is packed solid, which is not enough — translating the short,
+  repetitive lines first actually makes the compressed file *grow*. When that
+  happens `tools/build.py` rebuilds the container with room to spare, so you
+  never have to shorten a sentence to make a build fit.
 
 ### Before / after
 
@@ -72,18 +77,19 @@ confirm each string really arrived.
 
 ## What is translated here
 
-`translation/english.json` carries **166 strings** — enough to navigate and
+`translation/english.json` carries **290 strings** — enough to navigate and
 play the game in English:
 
 - **All the menus**: stage and track names, pause and confirmation menus,
   difficulty labels, save/load prompts, controller warnings. (Several menus
   were already English on the disc.)
-- **109 HUD and radio strings**: damage and status callouts, enemy contact
-  and bearings, directions, mission orders, squadron names.
+- **233 HUD and radio strings**: damage and status callouts, enemy contact
+  and bearings, clock positions, directions, mission orders, squadron names,
+  and the tutorial's button prompts.
 
 **The story script is deliberately not translated here.** That is a human
 translator's job, and this repository exists to make that job possible, not
-to do it badly. **2,573 lines are waiting in the workbook.**
+to do it badly. **2,449 lines are waiting in the workbook.**
 
 ## Known limitations
 
@@ -95,18 +101,8 @@ to do it badly. **2,573 lines are waiting in the workbook.**
 - Memory-card save titles (`str-027a9c-017`..`023`) are deliberately left
   alone; renaming them would orphan existing save data. They are already
   readable English words, just in full-width characters.
-- **There is a size ceiling, and it bites hardest in the middle.**
-  `BOOTDAT.CMP` is allocated 198,656 bytes and `JPN.CVM` is packed solid, so
-  the recompressed file has to fit. A *partly* translated file compresses
-  **worse** than either the original or a finished one — it breaks up the
-  repetition the codec was exploiting in the Japanese while adding novel
-  English. The shipped translation leaves ~100 bytes spare; `tools/build.py`
-  reports the headroom on every build and fails with an explanation rather
-  than truncating. Shortening wording, or translating more of the surrounding
-  text, both help. Removing the ceiling entirely means rebuilding the CVM
-  into the 199 MB of unused space `ETC.CVM` occupies — identified, not built.
-- Only SLPM-65405 (Japan) is supported. Another release needs its own hashes
-  in `tools/verify.py`.
+- Only SLPM-65405 (Japan) is supported.
+  Another release needs its own hashes in `tools/verify.py`.
 
 ## Documentation
 

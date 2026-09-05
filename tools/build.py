@@ -24,6 +24,7 @@ import sys
 
 sys.path.insert(0, os.path.join(
     os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "tools"))
+import cvmexpand
 import isopatch
 import text as gametext
 import verify
@@ -108,6 +109,18 @@ def main():
         os.remove(args.out)
     shutil.copy2(args.iso, args.out)
     data = open(cmp_, "rb").read()
+
+    # The script's 97 sectors are not always enough. Translating the short,
+    # repetitive lines first makes the file *grow*, because those lines cost
+    # almost nothing compressed and their English replacements are novel. When
+    # that happens, rebuild the container with room to spare rather than
+    # asking the translator to write shorter sentences.
+    cap = cvmexpand.allocation(args.out, "JPN.CVM", "BOOTDAT.CMP")[0]
+    if len(data) > cap:
+        room = max(len(data), len(patched) + isopatch.SECTOR)
+        cap = cvmexpand.expand(args.out, "JPN.CVM", "BOOTDAT.CMP", room)
+        print(f"\nscript outgrew its {198656}-byte slot; rebuilt JPN.CVM with "
+              f"{cap} bytes for it ({cap // isopatch.SECTOR} sectors)")
     off, cap = isopatch.patch(args.iso, args.out, "JPN.CVM", "BOOTDAT.CMP", data)
 
     # Prove it: read the file back out of the finished image, decompress it

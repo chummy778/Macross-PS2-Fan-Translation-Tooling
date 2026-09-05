@@ -70,6 +70,11 @@ extraction and before patching, and hashes the files the patch depends on
 rather than the whole disc, so a wrong region or a bad dump is distinguishable
 from a re-release.
 
+**C11a — A translator is never asked to write shorter English to make the
+build fit.** If the data does not fit the disc, the disc is what changes.
+Byte budgets per string are unavoidable (text is written in place); the
+*total* size is not, and `tools/cvmexpand.py` removes it.
+
 **C11 — Ids are properties of the game, not of the tool.** Strings are keyed
 by byte offset, never by index. A parser that learns to see one more string
 must not silently re-point an existing translation. This is not hypothetical:
@@ -85,6 +90,9 @@ the parser here was corrected mid-project and gained 660 records.
 - Emulator fully scriptable: boot, memory, input, screenshots, savestate
   disassembly and call stacks
 - End-to-end patcher with verification, and a translation editor
+- The container's size ceiling removed: `JPN.CVM` is rebuilt and relocated
+  when the script outgrows its 97 sectors, so no translation has to be cut
+  short to make a build fit
 
 ## Not done
 
@@ -92,10 +100,5 @@ the parser here was corrected mid-project and gained 660 records.
 - Textures: stage title cards, logo, 2D menu art (TIM2). Art job, out of scope.
 - Growing a string beyond its slot. Not needed at 2.12x, and would require
   rewriting the pool offset tables.
-- Removing the compressed-size ceiling. `BOOTDAT.CMP` must fit 198,656 bytes
-  and a partial translation compresses worse than a complete one, so the
-  limit binds during the middle of the work. The fix is to rebuild `JPN.CVM`
-  with a larger extent inside the 199 MB `ETC.CVM` occupies (a dummy of all
-  zeros, absent from `0FLIST.DIR`; the outer directory record and the CVMH
-  size field at `+0x20` would both need updating). Identified and measured,
-  not built.
+- Audio dialogue. Radio transmissions during gameplay are voiced and
+  unsubtitled; subtitling them is a separate piece of work.

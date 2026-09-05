@@ -6,10 +6,17 @@ proves *something* rendered, a row number proves the *right* text rendered in
 the *right* place.
 
 ```sh
-python3 stress/make_placeholder.py     # -> stress/placeholder.json
-./stress/bisect.sh <first> <last>      # build a subset, boot it, report liveness
-./stress/probe.sh  <built.iso> <tag>   # boot an existing ISO, sample twice
+python3 stress/make_placeholder.py "Macross (Japan).iso"   # -> placeholder.json
+./stress/bisect.sh "Macross (Japan).iso" <first> <last>    # subset, boot, report
+./stress/probe.sh  <built.iso> <tag>                       # boot, sample twice
+python3 stress/sizesweep.py "Macross (Japan).iso"          # will it fit the disc?
 ```
+
+`make_placeholder.py` answers *does every string reach the screen*.
+`sizesweep.py` answers *does a translation fit the disc* -- a different
+question with a much less obvious answer, and the one that caught us out:
+translating the short repetitive lines first makes the compressed file grow.
+Read its docstring before trusting any intuition about size.
 
 **Status: passing.** All 2,015 records replaced, booted, and verified on
 screen — `R1513 sed do eiusmod tempor…` and `R1517 incididunt ut labore…`
