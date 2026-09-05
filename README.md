@@ -4,15 +4,8 @@ Tooling for an English fan translation of **Chou Jikuu Yousai Macross**
 (超時空要塞マクロス, PS2, SLPM-65405, Sega AM2 / Bandai, 2003).
 
 > **Disclaimer:** This repo was developed by a coding AI agent (Claude
-> Opus/Sonnet 5). My intent was to **leverage coding AI to write tooling for
-> human-written fan translations, NOT to use AI for the translation itself.**
-> AI translations for video games (and for entertainment in general) are
-> shoddy, and releasing them often deprives us of getting proper translations
-> later. Please respect this constraint.
-
-**This repository contains no game data and no game script.** It ships tools,
-documentation, and the English side of a translation. You supply your own copy
-of the game; everything Japanese is extracted on your machine and never
+> Opus/Sonnet 5). **This repository contains no game data and no game script.** It ships tools and
+documentation for creating a translation patch for the game with minimal technical knowledge. You supply your own copy of the game; everything Japanese is extracted on your machine and never
 committed.
 
 ## What works
