@@ -129,8 +129,19 @@ def find(f, base, want, rec_out=None):
 
 
 def locate(image, cvm_name, inner_name):
-    """Absolute (offset, capacity, directory-record offset) of a file."""
+    """Absolute (offset, capacity, directory-record offset) of a file.
+
+    `cvm_name=None` addresses a file on the outer disc rather than one
+    inside a container -- that is how the executable is reached, since the
+    system messages the game shows before the first mission live in
+    `SLPM_654.05` and not in `BOOTDAT.CMP`.
+    """
     with open(image, "rb") as f:
+        if cvm_name is None:
+            rec = []
+            lba, length = find(f, 0, inner_name, rec_out=rec)
+            cap = capacity(f, 0, lba, length)
+            return lba * SECTOR, cap, rec[0]
         cvm_lba, _ = find(f, 0, cvm_name)
         cvm_base = cvm_lba * SECTOR + CVM_HEADER
         rec = []

@@ -147,15 +147,23 @@ Nothing here blocks the build. Everything here shipped on a stated default.
     dropped on screen. 42 strings reflowed to two lines of 48. The Global
     Report box does take three lines; that surface was correct.
 
-20. **Japanese remains in files this patcher does not touch -- NOT FIXED.**
-    `RSLT.MRG`, `JISUCST.MRG`, `MENU_AUTH.CMP`, `MENU_AUTH_RSLT.CMP` and the
-    `GLB_AUTH_*` / `BRF_AUTH_*` cutscene-authoring files together hold about
-    1,100 characters of real prose. `docs/FORMATS.md` claims the `*_AUTH_*`
-    files "hold no text"; that is wrong. The build pipeline only ever writes
-    `BOOTDAT.CMP`, so reaching these needs a second patch path: decompress,
-    edit, recompress and write back a different member of `JPN.CVM`. Ids
-    would also need a file-qualified form. This is the mission-select and
-    results-screen Japanese a player still sees.
+20. **The last Japanese was in the executable -- FIXED.** A player still met
+    Japanese before the first mission: memory card, save/load, HDD and
+    joystick-calibration prompts. These are 52 plain Shift-JIS strings in
+    `SLPM_654.05`, not in `BOOTDAT.CMP`, so no amount of script work could
+    reach them. `tools/elftext.py` now finds them, `isopatch` can address
+    outer-disc files, and `build.py` patches and verifies them. Confirmed on
+    the built image: executable unchanged in size, zero Japanese system
+    strings left, game still boots.
+
+    **A correction, and the third time this trap caught me.** I first
+    reported "about 1,100 characters of prose" spread across `RSLT.MRG`,
+    `MENU_AUTH.CMP` and the `GLB_AUTH_*` files. That was wrong: those hits
+    were floats and model data decoding as Shift-JIS. Screened properly --
+    a run must be at least 40% hiragana over six or more characters -- those
+    files contain **zero** genuine Japanese. A weak heuristic produced a
+    confident wrong number three times on this project; the strict test is
+    now in `tools/elftext.py` and documented in `docs/FORMATS.md`.
 
 ## Still open
 

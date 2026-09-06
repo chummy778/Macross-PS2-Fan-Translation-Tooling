@@ -33,6 +33,8 @@ sys.path.insert(0, os.path.join(
 import cvmexpand
 import isopatch
 import text as gametext
+import elftext
+import gamedata
 import verify
 from make_workbook import CRICMP, ROOT, need_cricmp, script_blob
 
@@ -126,7 +128,12 @@ def main():
     if args.mtl:
         layers.append(os.path.join(ROOT, "translation/english-mtl.json"))
     edits, caps = load_edits(layers, args.csv)
-    if not edits and not (caps or args.subtitles):
+    # The executable's system messages are addressed by their own ids and
+    # live in a different file; keep them out of the BOOTDAT edit set, which
+    # validates every id against a script unit.
+    elf_edits = {k: v for k, v in edits.items() if k.startswith("elf-")}
+    edits = {k: v for k, v in edits.items() if not k.startswith("elf-")}
+    if not edits and not elf_edits and not (caps or args.subtitles):
         sys.exit("no translated lines found -- nothing to build")
 
     problems = check_budgets(blob, edits)
@@ -181,6 +188,28 @@ def main():
 
     assert os.path.getsize(args.iso) == before, "source image was modified"
     head = cap - len(data)
+    # The system messages -- memory card, save/load, HDD, stick calibration --
+    # are plain Shift-JIS inside the executable, not in BOOTDAT. They are what
+    # a player meets before the first mission, so leaving them alone leaves
+    # the game visibly half-translated.
+    if elf_edits:
+        elf = open(gamedata.elf_path(args.iso), "rb").read()
+        new_elf, n_elf = elftext.apply(elf, elf_edits)
+        isopatch.patch(args.iso, args.out, None, "SLPM_654.05", new_elf)
+        back = open(gamedata.elf_path(args.out), "rb").read()
+        got = {s_.uid: s_.text for s_ in elftext.strings(elf)}
+        wrong = []
+        for uid, want in elf_edits.items():
+            st = next((x for x in elftext.strings(elf) if x.uid == uid), None)
+            if st is None:
+                continue
+            end = new_elf.find(b"\x00", st.offset)
+            if back[st.offset:end].decode("shift_jis", "replace") != want:
+                wrong.append(uid)
+        if wrong:
+            sys.exit(f"{len(wrong)} ELF strings did not read back: {wrong[:5]}")
+        print(f"{n_elf} system messages written into the executable")
+
     print(f"\n{n} lines written, {len(data)} bytes compressed of {cap} "
           f"available -- {head} bytes spare")
     if captioned:

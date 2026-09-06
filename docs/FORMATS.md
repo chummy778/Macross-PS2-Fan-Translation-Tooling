@@ -60,7 +60,8 @@ tool about it".
 
 ## Where the text is
 
-**All of it is in one file: `JPN.CVM/BOOTDAT.CMP`** (198 KB compressed,
+**Nearly all of it is in one file: `JPN.CVM/BOOTDAT.CMP`** -- the exception
+being the 52 system messages in the executable, see below. (198 KB compressed,
 316,988 bytes decompressed).
 
 This was worth checking carefully, because a naive Shift-JIS scan finds
@@ -101,9 +102,15 @@ distributed here. Run `tools/text.py` against your own copy to see it.)
 - The nested MRG structure. Extraction does not need it; **patching with
   longer text probably does**, since growing a record means moving what
   follows and fixing the pointers that reference it.
-- Whether 41,669 characters is the *whole* game's text. The ELF was scanned
+- ~~Whether 41,669 characters is the *whole* game's text. The ELF was scanned
   and holds **no prose** (only dense-kanji noise), so the script is not
-  split between the two. Still unaudited: menu and HUD labels, which are
+  split between the two.~~ **Wrong.** `SLPM_654.05` holds **52 Japanese
+  system messages** -- memory card, save/load, HDD, joystick calibration --
+  in plain Shift-JIS. They are the first thing a player sees, before the
+  first mission, and they made the game look half-translated long after the
+  script was finished. `tools/elftext.py` finds them and `build.py` patches
+  them in place. The original scan missed them because it looked for
+  *density* of kanji rather than for real sentences. Still unaudited: menu and HUD labels, which are
   likely **textures** rather than text, and would need art edits.
 - ~~Whether the font has Latin glyphs~~ — **answered: it does.** See Font.
 

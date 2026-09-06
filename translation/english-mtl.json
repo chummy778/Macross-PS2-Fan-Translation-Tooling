@@ -7682,5 +7682,213 @@
  },
  "str-0285fc-054": {
   "en": "Destroy the commander"
+ },
+ "elf-2c7a60": {
+  "en": "The file cannot be read.\nReturning to the main menu. Please wipe the disc\nclean before use.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c87b0": {
+  "en": "Saving %s needs %dKB or more",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8a10": {
+  "en": "To start the game anyway, press a button.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8a80": {
+  "en": "No Memory Card (PS2) is inserted.\nStart the game anyway?",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8b30": {
+  "en": "The Memory Card (PS2) does not have enough free space.\nStart the game anyway?",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8c20": {
+  "en": "That file already exists.\nOverwrite it?",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8ca0": {
+  "en": "The Memory Card (PS2) is not formatted.\nFormat it now?",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8d40": {
+  "en": "No Memory Card (PS2) is inserted.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8e50": {
+  "en": "Please insert a Memory Card (PS2)\nwith free space into %s.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8e90": {
+  "en": "Please insert the Memory Card (PS2) with\nthe file to load into %s.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8ee0": {
+  "en": "There is not enough free space to save.\nSaving the file needs %sKB or more.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c8fd0": {
+  "en": "Do not turn off the PlayStation 2 or\nremove the Memory Card (PS2).",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9090": {
+  "en": "Save completed.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c90c0": {
+  "en": "Save failed.\nCheck that the Memory Card (PS2) is inserted correctly.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9180": {
+  "en": "The PlayStation BB Unit has reached its\nfolder limit. No more folders can be made.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c91f0": {
+  "en": "The PlayStation BB Unit has reached its\ndata limit. No more data can be saved.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9260": {
+  "en": "No more data can be created.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c92b0": {
+  "en": "There is no file to load.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9330": {
+  "en": "Load completed.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9370": {
+  "en": "Load failed.\nCheck that the Memory Card (PS2) is inserted correctly.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9430": {
+  "en": "The file is damaged and could not be loaded.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9490": {
+  "en": "The file is damaged and could not be saved.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9530": {
+  "en": "Format completed.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9570": {
+  "en": "Format failed.\nCheck that the Memory Card (PS2) is inserted correctly.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9640": {
+  "en": "  Press a button.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9680": {
+  "en": "Press a button.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c96c0": {
+  "en": "Checking the Memory Card (PS2).\nDo not turn off the PlayStation 2 or\nremove the Memory Card (PS2).",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9780": {
+  "en": "Select a Memory Card (PS2) to use.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c97d0": {
+  "en": "You will not be able to save. Start anyway?",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9960": {
+  "en": "This is not the Memory Card (PS2) selected\nwhen the game started. Please insert that\ncard into slot %s.\nPress Cross to cancel saving.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9a70": {
+  "en": "Even overwriting this file leaves too\nlittle space. Please select another file.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9b20": {
+  "en": "The PlayStation BB Unit is not formatted.\nGame data cannot be saved as things are.\nTo use the PlayStation BB Unit, format it\nas described in the manual supplied with it.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9cc0": {
+  "en": "Installing.\nDo not turn off the PlayStation 2.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2c9ed0": {
+  "en": "Accessing the PlayStation BB Unit.\nDo not turn off the PlayStation 2.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca050": {
+  "en": "The PlayStation BB Unit is not connected.\nQuit the game and reconnect it.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca0d0": {
+  "en": "An error has occurred.\nQuit the game and check that the\nPlayStation BB Unit is properly connected.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca140": {
+  "en": "The PlayStation BB Unit is not formatted.\nFormat it as described in the manual\nsupplied with it.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca1f0": {
+  "en": "An error has occurred.\nThe PlayStation BB Unit has failed.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca240": {
+  "en": "An error has occurred.\nRepair the PlayStation BB Unit as described\nin the manual supplied with it.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca2d0": {
+  "en": "Centre the stick, then\npress a button.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca350": {
+  "en": "Move the stick fully in all directions,\nthen press a button.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca480": {
+  "en": "Turn the twist handle fully both ways,\nthen press a button.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca530": {
+  "en": "Move the throttle fully up and down,\nthen press a button.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca630": {
+  "en": "No compatible joystick is connected.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca690": {
+  "en": "The PlayStation BB Unit is not connected.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca6c0": {
+  "en": "The PlayStation BB Unit is not connected.\nSaving the file needs %sKB or more.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca7d0": {
+  "en": "Do not turn off the PlayStation 2.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca860": {
+  "en": "Save failed.\nCheck that the PlayStation BB Unit is\nproperly connected.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca8d0": {
+  "en": "Load failed.\nThe file may be damaged.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca950": {
+  "en": "Checking the PlayStation BB Unit.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2ca980": {
+  "en": "The PlayStation BB Unit is not connected.\nQuit the game and reconnect it.\nPress Cross to cancel saving.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
+ },
+ "elf-2caad0": {
+  "en": "There is no file.",
+  "note": "system message in SLPM_654.05, not in BOOTDAT"
  }
 }
