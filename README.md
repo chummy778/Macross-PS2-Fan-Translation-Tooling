@@ -10,9 +10,8 @@ committed.
 
 ## See it running
 
-[![Watch the translation in action](https://img.youtube.com/vi/5afk6zPmE1g/maxresdefault.jpg)](https://www.youtube.com/watch?v=5afk6zPmE1g)
-
-*The patched game, playing. Click to watch on YouTube.*
+[**Watch the translation in action**](https://www.youtube.com/watch?v=5afk6zPmE1g) — the patched
+game, playing.
 
 ## What works
 
