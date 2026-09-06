@@ -88,9 +88,11 @@ def check_budgets(blob, edits):
             problems.append(f"  {uid}: {e.reason} -- cannot be encoded "
                             f"(Shift-JIS only): {s[:40]!r}")
             continue
-        if n > u.budget:
-            problems.append(f"  {uid}: {n} bytes, {n - u.budget} over the "
-                            f"{u.budget}-byte slot: {s[:60]!r}")
+        # one byte of the slot belongs to the NUL terminator
+        if n >= u.budget:
+            problems.append(f"  {uid}: {n} bytes, {n - u.budget + 1} over what "
+                            f"the {u.budget}-byte slot leaves for text "
+                            f"(1 byte is the NUL terminator): {s[:60]!r}")
     return problems
 
 

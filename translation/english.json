@@ -1,1166 +1,1166 @@
 {
-  "str-027864-000": {
-    "en": "Tutorial",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-001": {
-    "en": "Booby Trap",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-002": {
-    "en": "Space Fold",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-003": {
-    "en": "Transformation",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-004": {
-    "en": "Daedalus Attack",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-005": {
-    "en": "Bye-Bye Mars",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-006": {
-    "en": "Miss Macross",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-007": {
-    "en": "Blind Game",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-008": {
-    "en": "Big Escape",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-009": {
-    "en": "Blue Wind",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-010": {
-    "en": "Pineapple Salad",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-011": {
-    "en": "Burst Point",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-012": {
-    "en": "Drop Out",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-013": {
-    "en": "Love Flows",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-014": {
-    "en": "Assault",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-015": {
-    "en": "Change",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-016": {
-    "en": "Giants",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-017": {
-    "en": "Search",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-018": {
-    "en": "Enemy",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-019": {
-    "en": "War God",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-020": {
-    "en": "Ruins",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-021": {
-    "en": "Do You Remember Love",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-022": {
-    "en": "Do You Remember Love (Hikaru)",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-023": {
-    "en": "Pineapple Salad (Max)",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-024": {
-    "en": "Goodbye Girl",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027864-025": {
-    "en": "Rival",
-    "note": "stage / track name (episode title)"
-  },
-  "str-027a9c-000": {
-    "en": "Resume the game from here.",
-    "note": "continue prompt"
-  },
-  "str-027a9c-001": {
-    "en": "(Scores will not be recorded.)",
-    "note": "continue prompt"
-  },
-  "str-027a9c-002": {
-    "en": "Save replay data.",
-    "note": ""
-  },
-  "str-027a9c-003": {
-    "en": "Yes",
-    "note": ""
-  },
-  "str-027a9c-004": {
-    "en": "No",
-    "note": ""
-  },
-  "str-027a9c-009": {
-    "en": "Retry.",
-    "note": ""
-  },
-  "str-027a9c-010": {
-    "en": "Play the replay.",
-    "note": ""
-  },
-  "str-027a9c-011": {
-    "en": "Save system data.",
-    "note": ""
-  },
-  "str-027a9c-012": {
-    "en": "Results",
-    "note": "versus results header"
-  },
-  "str-027e3c-007": {
-    "en": "Return to the game.",
-    "note": "pause menu"
-  },
-  "str-027e3c-008": {
-    "en": "Restart this stage from the start.",
-    "note": "pause menu"
-  },
-  "str-027e3c-009": {
-    "en": "Quit the game.",
-    "note": "pause menu"
-  },
-  "str-027e3c-010": {
-    "en": "Select the movement mode.",
-    "note": "pause menu"
-  },
-  "str-027e3c-011": {
-    "en": "Select control layout.",
-    "note": "pause menu; tight slot"
-  },
-  "str-027e3c-012": {
-    "en": "Toggle camera effects ON/OFF.",
-    "note": "pause menu"
-  },
-  "str-027e3c-025": {
-    "en": "Restart this stage from a checkpoint.",
-    "note": "pause menu"
-  },
-  "str-028044-012": {
-    "en": "Start a new game.",
-    "note": "was bilingual; English kept"
-  },
-  "str-028044-013": {
-    "en": "Load system data and resume play.",
-    "note": "was bilingual"
-  },
-  "str-028044-014": {
-    "en": "Return to Game Select Menu.",
-    "note": "was bilingual"
-  },
-  "str-028044-015": {
-    "en": "Install to the Hard Disk Drive.",
-    "note": "was bilingual"
-  },
-  "str-028044-016": {
-    "en": "Uninstall from the Hard Disk Drive.",
-    "note": "was bilingual"
-  },
-  "str-028044-017": {
-    "en": "Easy",
-    "note": "difficulty"
-  },
-  "str-028044-018": {
-    "en": "Normal",
-    "note": "difficulty"
-  },
-  "str-028044-019": {
-    "en": "Hard",
-    "note": "difficulty"
-  },
-  "str-028044-021": {
-    "en": "Special equipment:\nvirtual combat mode.\nNo score is recorded.\nCraft not shown in demos.",
-    "note": "4 lines"
-  },
-  "str-028044-022": {
-    "en": "Special equipment:\nno score recorded.",
-    "note": "2 lines"
-  },
-  "str-028044-023": {
-    "en": "No stages available for\nthe current equipment.",
-    "note": "2 lines"
-  },
-  "str-027a9c-013": {
-    "en": "The DUALSHOCK 2 has been disconnected from controller port 1. Please check that it is inserted correctly.",
-    "note": "pad disconnect warning"
-  },
-  "str-027a9c-014": {
-    "en": "The DUALSHOCK 2 has been disconnected from controller port 2. Please check that it is inserted correctly.",
-    "note": "pad disconnect warning"
-  },
-  "str-027a9c-015": {
-    "en": "The DUALSHOCK 2 has been disconnected from controller port 3. Please check that it is inserted correctly.",
-    "note": "pad disconnect warning"
-  },
-  "str-027a9c-016": {
-    "en": "The DUALSHOCK 2 has been disconnected from controller port 4. Please check that it is inserted correctly.",
-    "note": "pad disconnect warning"
-  },
-  "rec-000bbc": {
-    "en": "Over!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-000f3c": {
-    "en": "That is all.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-001244": {
-    "en": "That is all.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0058cc": {
-    "en": "All ships, go!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-006330": {
-    "en": "Roger.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00633c": {
-    "en": "Roger.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-006bfc": {
-    "en": "Roger!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-007c38": {
-    "en": "Main gun fire!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0080f0": {
-    "en": "Attack!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0088cc": {
-    "en": "Missile incoming!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-008f78": {
-    "en": "Critical in 2min",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-009020": {
-    "en": "Critical in 1min",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-009054": {
-    "en": "Critical in 15s",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-009574": {
-    "en": "Critical in 4min",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0095ac": {
-    "en": "Critical in 3min",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a49c": {
-    "en": "Enemy, 1 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a4b4": {
-    "en": "Enemy, 2 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a4cc": {
-    "en": "Enemy, 3 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a4e4": {
-    "en": "Enemy, 4 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a4fc": {
-    "en": "Enemy, 5 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a514": {
-    "en": "Enemy, 6 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a52c": {
-    "en": "Enemy, 7 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a544": {
-    "en": "Enemy, 8 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a55c": {
-    "en": "Enemy, 9 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a574": {
-    "en": "Enemy at 10 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a590": {
-    "en": "Enemy at 11 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00a5ac": {
-    "en": "Enemy at 12 o'clock!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00aa88": {
-    "en": "Formation closing!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00aac4": {
-    "en": "Enemy!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00bfb0": {
-    "en": "Main gun fire!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00c2d4": {
-    "en": "Roger!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00c584": {
-    "en": "Roger.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00c824": {
-    "en": "...Roger.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00cf6c": {
-    "en": "Barrier active.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00cfd0": {
-    "en": "Barrier deployed!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00d570": {
-    "en": "Barrier failing!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00d588": {
-    "en": "Barrier failing!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00d5a0": {
-    "en": "Barrier failing!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00ed80": {
-    "en": "Translation OK",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00ee34": {
-    "en": "Success.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00ee44": {
-    "en": "All fire!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00eed8": {
-    "en": "Target close!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00f3cc": {
-    "en": "Roger.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-00f5cc": {
-    "en": "No reaction ammo!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0100f4": {
-    "en": "Macross is hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-010804": {
-    "en": "Impact!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-010e80": {
-    "en": "Roger!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-011140": {
-    "en": "Roger!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0119c8": {
-    "en": "Roger!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01214c": {
-    "en": "Locked on!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0121cc": {
-    "en": "Enemy sighted!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0121e0": {
-    "en": "Behind you!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0121f4": {
-    "en": "Above you!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-012208": {
-    "en": "Below you!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01221c": {
-    "en": "To your right!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-012234": {
-    "en": "To your left!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01224c": {
-    "en": "Enemy behind!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-012264": {
-    "en": "Enemy above!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01227c": {
-    "en": "Enemy below!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0122cc": {
-    "en": "Contact lost.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0123a8": {
-    "en": "Contact!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01243c": {
-    "en": "We're hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-012498": {
-    "en": "Missile incoming!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-012b20": {
-    "en": "Pursuing!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-012c7c": {
-    "en": "Image analysis...",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0137bc": {
-    "en": "Macross main gun hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-013ee8": {
-    "en": "Enemy reinf.!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-014ccc": {
-    "en": "Good luck.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-017088": {
-    "en": "Critical in 15s",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0172f0": {
-    "en": "Macross main gun damaged!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-017c04": {
-    "en": "Over!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01a2dc": {
-    "en": "Press Triangle!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01a364": {
-    "en": "Cross button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01aba8": {
-    "en": "Hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01abb8": {
-    "en": "Hit confirmed!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01abd0": {
-    "en": "Hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ad30": {
-    "en": "No reaction ammo!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ad80": {
-    "en": "Gunpod overheat!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ade4": {
-    "en": "Engine overheat!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ae48": {
-    "en": "Damage taken!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ae5c": {
-    "en": "We're hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ae6c": {
-    "en": "Damage!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01aeac": {
-    "en": "Damage increasing!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01af3c": {
-    "en": "Critical dmg!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01af50": {
-    "en": "Engage.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01af84": {
-    "en": "Enemy. Engage.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01af9c": {
-    "en": "Enemy astern!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01afb0": {
-    "en": "Enemy astern!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01afc8": {
-    "en": "Enemy astern!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01afe0": {
-    "en": "Enemy reinf.!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01aff4": {
-    "en": "Reinf. confirmed!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b00c": {
-    "en": "Enemy reinforce!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b218": {
-    "en": "Missile away!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b270": {
-    "en": "Reaction away!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b558": {
-    "en": "From Delta One...",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b570": {
-    "en": "This is Delta One.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b588": {
-    "en": "...to all craft.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b5a0": {
-    "en": "...all.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b5b0": {
-    "en": "Skull Squadron",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b5c4": {
-    "en": "Vermilion Squadron",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b5dc": {
-    "en": "Purple Sqn",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b5f0": {
-    "en": "Apollo Sqn",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b604": {
-    "en": "Orange Sqn",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b618": {
-    "en": "Rose Squadron",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b62c": {
-    "en": "...all, launch!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b644": {
-    "en": "...launch!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b654": {
-    "en": "...all launch!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b698": {
-    "en": "...launch.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b7f0": {
-    "en": "...area",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b800": {
-    "en": "...proceed.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b814": {
-    "en": "...to area",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b828": {
-    "en": "...at once.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b840": {
-    "en": "Skull Sqn:",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b854": {
-    "en": "Vermilion Squadron:",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b870": {
-    "en": "Purple Squadron:",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b888": {
-    "en": "Apollo Sqn:",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b89c": {
-    "en": "Orange Squadron:",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b8b4": {
-    "en": "Rose Squadron:",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b8c8": {
-    "en": "Urgent",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b8d4": {
-    "en": "1 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b8e0": {
-    "en": "2 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b8ec": {
-    "en": "3 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b8f8": {
-    "en": "4 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b904": {
-    "en": "5 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b910": {
-    "en": "6 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b91c": {
-    "en": "7 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b928": {
-    "en": "8 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b934": {
-    "en": "9 o'c",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b940": {
-    "en": "10 o'clock",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b950": {
-    "en": "11 o'clock",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01b960": {
-    "en": "12 o'clock",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bb00": {
-    "en": "Destroy enemies.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bb18": {
-    "en": "Intercept enemy.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bb30": {
-    "en": "Destroy warships.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bb48": {
-    "en": "Intercept ships.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bbbc": {
-    "en": "Attack the target.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bbd4": {
-    "en": "Intercept target.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bbec": {
-    "en": "Destroy target.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bcb8": {
-    "en": "Block 1",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bcd0": {
-    "en": "Block 2",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bce8": {
-    "en": "Block 3",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bd00": {
-    "en": "Block 4",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bd18": {
-    "en": "Block 5",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bd30": {
-    "en": "Block 6",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bd48": {
-    "en": "Block 7",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bd60": {
-    "en": "Block 8",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bd78": {
-    "en": "Block 9",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bd90": {
-    "en": "Block 10",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bda8": {
-    "en": "Block 11",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01bdc0": {
-    "en": "...defend it.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01be30": {
-    "en": "...intercept.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c0ac": {
-    "en": "...with care.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c0c0": {
-    "en": "...stay alert.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c108": {
-    "en": "...increase speed.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c184": {
-    "en": "...speed OK.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c20c": {
-    "en": "Commence attack",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c224": {
-    "en": "Commence intercept",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c25c": {
-    "en": "Withdraw at once",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c274": {
-    "en": "Pull out at once",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c28c": {
-    "en": "Stay near target",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c508": {
-    "en": "Do you read me?",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c520": {
-    "en": "You all right?",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c534": {
-    "en": "Please respond.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c568": {
-    "en": "Respond.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c598": {
-    "en": "Target: enemy pod",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c5b0": {
-    "en": "Tgt: warship",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c5c4": {
-    "en": "We're hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c5d4": {
-    "en": "Dir. hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c624": {
-    "en": "Hit! Heavy dmg!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c63c": {
-    "en": "Hvy dmg!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c6bc": {
-    "en": "Craft shot down!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c6d4": {
-    "en": "Gone...",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c8d8": {
-    "en": "From stbd",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c8e8": {
-    "en": "From port",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c8f8": {
-    "en": "From ahead",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c908": {
-    "en": "From aft",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c918": {
-    "en": "Stbd",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c924": {
-    "en": "Port",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c930": {
-    "en": "Ahead",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c93c": {
-    "en": "Astern",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c948": {
-    "en": "From above",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c958": {
-    "en": "From below",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c968": {
-    "en": "From high",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c978": {
-    "en": "From low",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c9a4": {
-    "en": "We're hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c9b4": {
-    "en": "Damage!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c9e8": {
-    "en": "Casualties!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01c9fc": {
-    "en": "No repairs.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cbcc": {
-    "en": "No.1 sec. gun",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cbe0": {
-    "en": "No.2 sec. gun",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cbf4": {
-    "en": "No.3 sec. gun",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cc08": {
-    "en": "No.4 sec. gun",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cc1c": {
-    "en": "No.5 sec. gun",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cc30": {
-    "en": "Sect. 1",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cc40": {
-    "en": "Sect. 2",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cc50": {
-    "en": "Sect. 3",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cc60": {
-    "en": "Sect. 4",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cc70": {
-    "en": "Sect. 5",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cd68": {
-    "en": "Enemy down!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cde0": {
-    "en": "Target down.",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cdf4": {
-    "en": "Enemy withdrawing!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ce0c": {
-    "en": "Warship sunk!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ce40": {
-    "en": "He's on my tail!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ce84": {
-    "en": "We're surrounded!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ce9c": {
-    "en": "Roger!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cf78": {
-    "en": "I'm hit!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01cf8c": {
-    "en": "Going down!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d708": {
-    "en": "Press Circle!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d720": {
-    "en": "Press Cross!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d738": {
-    "en": "Press Square!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d750": {
-    "en": "Press L1!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d76c": {
-    "en": "Press L2!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d788": {
-    "en": "Press L3!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d7a4": {
-    "en": "Press R1!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d7c0": {
-    "en": "Press R2!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d7dc": {
-    "en": "Press R3!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d7f8": {
-    "en": "Circle button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d80c": {
-    "en": "Cross button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d820": {
-    "en": "Triangle!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d834": {
-    "en": "Square button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d848": {
-    "en": "L1 button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d860": {
-    "en": "R1 button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d878": {
-    "en": "L2 button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d890": {
-    "en": "R2 button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d8a8": {
-    "en": "L3 button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01d8c0": {
-    "en": "R3 button!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01dbcc": {
-    "en": "Roger!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01dbdc": {
-    "en": "Roger!!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ddac": {
-    "en": "Warship sunk!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ddc4": {
-    "en": "4 ships left!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ddd8": {
-    "en": "3 ships left!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01ddec": {
-    "en": "2 ships left!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-01de00": {
-    "en": "1 ships left!",
-    "note": "HUD / radio / order vocabulary"
-  },
-  "rec-0058e0": {
-    "en": "This ship is engaging\nalien forces.\nThis is not a drill.\nRepeat, this is not a drill.",
-    "note": "demo line, shows the radio subtitle feature"
-  }
+ "str-027864-000": {
+  "en": "Tutorial",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-001": {
+  "en": "Booby Trap",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-002": {
+  "en": "Space Fold",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-003": {
+  "en": "Transformation",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-004": {
+  "en": "Daedalus Attack",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-005": {
+  "en": "Bye-Bye Mars",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-006": {
+  "en": "Miss Macross",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-007": {
+  "en": "Blind Game",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-008": {
+  "en": "Big Escape",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-009": {
+  "en": "Blue Wind",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-010": {
+  "en": "Pineapple Salad",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-011": {
+  "en": "Burst Point",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-012": {
+  "en": "Drop Out",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-013": {
+  "en": "Love Flows",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-014": {
+  "en": "Assault",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-015": {
+  "en": "Change",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-016": {
+  "en": "Giants",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-017": {
+  "en": "Search",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-018": {
+  "en": "Enemy",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-019": {
+  "en": "War God",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-020": {
+  "en": "Ruins",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-021": {
+  "en": "Do You Remember Love",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-022": {
+  "en": "Do You Remember Love (Hikaru)",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-023": {
+  "en": "Pineapple Salad (Max)",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-024": {
+  "en": "Goodbye Girl",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027864-025": {
+  "en": "Rival",
+  "note": "stage / track name (episode title)"
+ },
+ "str-027a9c-000": {
+  "en": "Resume the game from here.",
+  "note": "continue prompt"
+ },
+ "str-027a9c-001": {
+  "en": "(Scores will not be recorded.)",
+  "note": "continue prompt"
+ },
+ "str-027a9c-002": {
+  "en": "Save replay data.",
+  "note": ""
+ },
+ "str-027a9c-003": {
+  "en": "Yes",
+  "note": ""
+ },
+ "str-027a9c-004": {
+  "en": "No",
+  "note": ""
+ },
+ "str-027a9c-009": {
+  "en": "Retry.",
+  "note": ""
+ },
+ "str-027a9c-010": {
+  "en": "Play the replay.",
+  "note": ""
+ },
+ "str-027a9c-011": {
+  "en": "Save system data.",
+  "note": ""
+ },
+ "str-027a9c-012": {
+  "en": "Results",
+  "note": "versus results header"
+ },
+ "str-027e3c-007": {
+  "en": "Return to the game.",
+  "note": "pause menu"
+ },
+ "str-027e3c-008": {
+  "en": "Restart this stage from the start.",
+  "note": "pause menu"
+ },
+ "str-027e3c-009": {
+  "en": "Quit the game.",
+  "note": "pause menu"
+ },
+ "str-027e3c-010": {
+  "en": "Select the movement mode.",
+  "note": "pause menu"
+ },
+ "str-027e3c-011": {
+  "en": "Select control layout.",
+  "note": "pause menu; tight slot"
+ },
+ "str-027e3c-012": {
+  "en": "Toggle camera effects ON/OFF.",
+  "note": "pause menu"
+ },
+ "str-027e3c-025": {
+  "en": "Restart this stage from a checkpoint.",
+  "note": "pause menu"
+ },
+ "str-028044-012": {
+  "en": "Start a new game.",
+  "note": "was bilingual; English kept"
+ },
+ "str-028044-013": {
+  "en": "Load system data and resume play.",
+  "note": "was bilingual"
+ },
+ "str-028044-014": {
+  "en": "Return to Game Select Menu.",
+  "note": "was bilingual"
+ },
+ "str-028044-015": {
+  "en": "Install to the Hard Disk Drive.",
+  "note": "was bilingual"
+ },
+ "str-028044-016": {
+  "en": "Uninstall from the Hard Disk Drive.",
+  "note": "was bilingual"
+ },
+ "str-028044-017": {
+  "en": "Easy",
+  "note": "difficulty"
+ },
+ "str-028044-018": {
+  "en": "Normal",
+  "note": "difficulty"
+ },
+ "str-028044-019": {
+  "en": "Hard",
+  "note": "difficulty"
+ },
+ "str-028044-021": {
+  "en": "Special equipment:\nvirtual combat mode.\nNo score is recorded.\nCraft not shown in demos.",
+  "note": "4 lines"
+ },
+ "str-028044-022": {
+  "en": "Special equipment:\nno score recorded.",
+  "note": "2 lines"
+ },
+ "str-028044-023": {
+  "en": "No stages available for\nthe current equipment.",
+  "note": "2 lines"
+ },
+ "str-027a9c-013": {
+  "en": "The DUALSHOCK 2 has been disconnected from controller port 1. Please check that it is inserted correctly.",
+  "note": "pad disconnect warning"
+ },
+ "str-027a9c-014": {
+  "en": "The DUALSHOCK 2 has been disconnected from controller port 2. Please check that it is inserted correctly.",
+  "note": "pad disconnect warning"
+ },
+ "str-027a9c-015": {
+  "en": "The DUALSHOCK 2 has been disconnected from controller port 3. Please check that it is inserted correctly.",
+  "note": "pad disconnect warning"
+ },
+ "str-027a9c-016": {
+  "en": "The DUALSHOCK 2 has been disconnected from controller port 4. Please check that it is inserted correctly.",
+  "note": "pad disconnect warning"
+ },
+ "rec-000bbc": {
+  "en": "Over!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-000f3c": {
+  "en": "That is all.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-001244": {
+  "en": "That is all.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0058cc": {
+  "en": "All ships go!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-006330": {
+  "en": "Roger",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00633c": {
+  "en": "Roger",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-006bfc": {
+  "en": "Roger!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-007c38": {
+  "en": "Main gun!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0080f0": {
+  "en": "Attack!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0088cc": {
+  "en": "Missile incoming!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-008f78": {
+  "en": "Critical in 2min",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-009020": {
+  "en": "Critical in 1min",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-009054": {
+  "en": "Critical in 15s",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-009574": {
+  "en": "Critical in 4min",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0095ac": {
+  "en": "Critical in 3min",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a49c": {
+  "en": "Enemy, 1 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a4b4": {
+  "en": "Enemy, 2 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a4cc": {
+  "en": "Enemy, 3 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a4e4": {
+  "en": "Enemy, 4 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a4fc": {
+  "en": "Enemy, 5 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a514": {
+  "en": "Enemy, 6 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a52c": {
+  "en": "Enemy, 7 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a544": {
+  "en": "Enemy, 8 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a55c": {
+  "en": "Enemy, 9 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a574": {
+  "en": "Enemy at 10 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a590": {
+  "en": "Enemy at 11 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00a5ac": {
+  "en": "Enemy at 12 o'clock!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00aa88": {
+  "en": "Enemy formation!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00aac4": {
+  "en": "Enemy!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00bfb0": {
+  "en": "Main gun!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00c2d4": {
+  "en": "Roger!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00c584": {
+  "en": "Roger",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00c824": {
+  "en": "...Roger.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00cf6c": {
+  "en": "Barrier active.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00cfd0": {
+  "en": "Barrier deployed!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00d570": {
+  "en": "Barrier failing!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00d588": {
+  "en": "Barrier failing!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00d5a0": {
+  "en": "Barrier failing!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00ed80": {
+  "en": "Translated OK",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00ee34": {
+  "en": "Success.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00ee44": {
+  "en": "All fire!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00eed8": {
+  "en": "Target close!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00f3cc": {
+  "en": "Roger",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-00f5cc": {
+  "en": "No reaction ammo!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0100f4": {
+  "en": "Macross is hit!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-010804": {
+  "en": "Impact!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-010e80": {
+  "en": "Roger!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-011140": {
+  "en": "Roger!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0119c8": {
+  "en": "Roger!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01214c": {
+  "en": "Locked on!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0121cc": {
+  "en": "Enemy sighted",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0121e0": {
+  "en": "Behind you!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0121f4": {
+  "en": "Above you!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-012208": {
+  "en": "Below you!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01221c": {
+  "en": "To your right!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-012234": {
+  "en": "To your left!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01224c": {
+  "en": "Enemy behind!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-012264": {
+  "en": "Enemy above!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01227c": {
+  "en": "Enemy below!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0122cc": {
+  "en": "Contact lost.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0123a8": {
+  "en": "Contact!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01243c": {
+  "en": "We're hit",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-012498": {
+  "en": "Missile incoming!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-012b20": {
+  "en": "Pursuing!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-012c7c": {
+  "en": "Image analysis...",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0137bc": {
+  "en": "Macross main gun hit!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-013ee8": {
+  "en": "Enemy reinf.!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-014ccc": {
+  "en": "Good luck.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-017088": {
+  "en": "Critical in 15s",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0172f0": {
+  "en": "Macross main gun damaged!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-017c04": {
+  "en": "Over!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01a2dc": {
+  "en": "Press Triangle!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01a364": {
+  "en": "Cross button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01aba8": {
+  "en": "Hit!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01abb8": {
+  "en": "Hit confirmed!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01abd0": {
+  "en": "Hit!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ad30": {
+  "en": "No reaction ammo!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ad80": {
+  "en": "Gunpod overheat!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ade4": {
+  "en": "Engine overheat!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ae48": {
+  "en": "Damage taken!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ae5c": {
+  "en": "We're hit",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ae6c": {
+  "en": "Damage!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01aeac": {
+  "en": "Damage increasing",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01af3c": {
+  "en": "Critical dmg!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01af50": {
+  "en": "Engage.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01af84": {
+  "en": "Enemy. Engage.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01af9c": {
+  "en": "Enemy astern!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01afb0": {
+  "en": "Enemy astern!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01afc8": {
+  "en": "Enemy astern!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01afe0": {
+  "en": "Enemy reinf.!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01aff4": {
+  "en": "Reinf. confirmed!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b00c": {
+  "en": "Enemy reinforce!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b218": {
+  "en": "Missile away!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b270": {
+  "en": "Reaction away",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b558": {
+  "en": "From Delta One...",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b570": {
+  "en": "This is Delta One",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b588": {
+  "en": "...to all craft.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b5a0": {
+  "en": "...all.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b5b0": {
+  "en": "Skull Sqn",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b5c4": {
+  "en": "Vermilion Sqn",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b5dc": {
+  "en": "Purple Sqn",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b5f0": {
+  "en": "Apollo Sqn",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b604": {
+  "en": "Orange Sqn",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b618": {
+  "en": "Rose Squadron",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b62c": {
+  "en": "...all, launch!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b644": {
+  "en": "...launch",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b654": {
+  "en": "...all launch",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b698": {
+  "en": "...launch.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b7f0": {
+  "en": "...area",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b800": {
+  "en": "...proceed.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b814": {
+  "en": "...to area",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b828": {
+  "en": "...at once.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b840": {
+  "en": "Skull Sqn:",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b854": {
+  "en": "Vermilion Squadron:",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b870": {
+  "en": "Purple Squadron:",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b888": {
+  "en": "Apollo Sqn:",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b89c": {
+  "en": "Orange Squadron:",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b8b4": {
+  "en": "Rose Sqn:",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b8c8": {
+  "en": "Fast",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b8d4": {
+  "en": "1 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b8e0": {
+  "en": "2 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b8ec": {
+  "en": "3 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b8f8": {
+  "en": "4 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b904": {
+  "en": "5 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b910": {
+  "en": "6 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b91c": {
+  "en": "7 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b928": {
+  "en": "8 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b934": {
+  "en": "9 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b940": {
+  "en": "10 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b950": {
+  "en": "11 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01b960": {
+  "en": "12 o'c",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bb00": {
+  "en": "Destroy enemies.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bb18": {
+  "en": "Intercept enemy.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bb30": {
+  "en": "Destroy warships.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bb48": {
+  "en": "Intercept ships.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bbbc": {
+  "en": "Attack the target",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bbd4": {
+  "en": "Intercept target.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bbec": {
+  "en": "Destroy target.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bcb8": {
+  "en": "Block 1",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bcd0": {
+  "en": "Block 2",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bce8": {
+  "en": "Block 3",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bd00": {
+  "en": "Block 4",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bd18": {
+  "en": "Block 5",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bd30": {
+  "en": "Block 6",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bd48": {
+  "en": "Block 7",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bd60": {
+  "en": "Block 8",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bd78": {
+  "en": "Block 9",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bd90": {
+  "en": "Block 10",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bda8": {
+  "en": "Block 11",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01bdc0": {
+  "en": "...defend it.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01be30": {
+  "en": "...intercept.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c0ac": {
+  "en": "...with care.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c0c0": {
+  "en": "...stay alert",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c108": {
+  "en": "...increase speed",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c184": {
+  "en": "...speed OK.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c20c": {
+  "en": "Commence attack",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c224": {
+  "en": "Intercept",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c25c": {
+  "en": "Withdraw at once",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c274": {
+  "en": "Pull out at once",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c28c": {
+  "en": "Stay near target",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c508": {
+  "en": "Do you read me?",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c520": {
+  "en": "All right?",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c534": {
+  "en": "Please respond.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c568": {
+  "en": "Respond.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c598": {
+  "en": "Target: enemy pod",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c5b0": {
+  "en": "Tgt: warship",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c5c4": {
+  "en": "We're hit",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c5d4": {
+  "en": "Dir. hit!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c624": {
+  "en": "Hit! Heavy dmg!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c63c": {
+  "en": "Hvy dmg!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c6bc": {
+  "en": "Craft shot down!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c6d4": {
+  "en": "Gone...",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c8d8": {
+  "en": "From stbd",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c8e8": {
+  "en": "From port",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c8f8": {
+  "en": "From fwd",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c908": {
+  "en": "From aft",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c918": {
+  "en": "Stbd",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c924": {
+  "en": "Port",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c930": {
+  "en": "Ahead",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c93c": {
+  "en": "Aft",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c948": {
+  "en": "Above",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c958": {
+  "en": "Below",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c968": {
+  "en": "From high",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c978": {
+  "en": "From low",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c9a4": {
+  "en": "We're hit",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c9b4": {
+  "en": "Damage!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c9e8": {
+  "en": "Casualties!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01c9fc": {
+  "en": "No repairs.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cbcc": {
+  "en": "No.1 sec. gun",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cbe0": {
+  "en": "No.2 sec. gun",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cbf4": {
+  "en": "No.3 sec. gun",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cc08": {
+  "en": "No.4 sec. gun",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cc1c": {
+  "en": "No.5 sec. gun",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cc30": {
+  "en": "Sect. 1",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cc40": {
+  "en": "Sect. 2",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cc50": {
+  "en": "Sect. 3",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cc60": {
+  "en": "Sect. 4",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cc70": {
+  "en": "Sect. 5",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cd68": {
+  "en": "Enemy down!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cde0": {
+  "en": "Target down.",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cdf4": {
+  "en": "Enemy withdrawing",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ce0c": {
+  "en": "Warship sunk!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ce40": {
+  "en": "He's on my tail!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ce84": {
+  "en": "We're surrounded!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ce9c": {
+  "en": "Roger!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cf78": {
+  "en": "I'm hit!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01cf8c": {
+  "en": "Going down!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d708": {
+  "en": "Press Circle!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d720": {
+  "en": "Press Cross!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d738": {
+  "en": "Press Square!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d750": {
+  "en": "Press L1!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d76c": {
+  "en": "Press L2!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d788": {
+  "en": "Press L3!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d7a4": {
+  "en": "Press R1!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d7c0": {
+  "en": "Press R2!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d7dc": {
+  "en": "Press R3!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d7f8": {
+  "en": "Circle button",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d80c": {
+  "en": "Cross button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d820": {
+  "en": "Triangle!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d834": {
+  "en": "Square button",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d848": {
+  "en": "L1 button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d860": {
+  "en": "R1 button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d878": {
+  "en": "L2 button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d890": {
+  "en": "R2 button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d8a8": {
+  "en": "L3 button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01d8c0": {
+  "en": "R3 button!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01dbcc": {
+  "en": "Roger!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01dbdc": {
+  "en": "Roger!!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ddac": {
+  "en": "Warship sunk!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ddc4": {
+  "en": "4 ships left!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ddd8": {
+  "en": "3 ships left!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01ddec": {
+  "en": "2 ships left!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-01de00": {
+  "en": "1 ships left!",
+  "note": "HUD / radio / order vocabulary"
+ },
+ "rec-0058e0": {
+  "en": "This ship is engaging\nalien forces.\nThis is not a drill.\nRepeat, this is not a drill.",
+  "note": "demo line, shows the radio subtitle feature"
+ }
 }

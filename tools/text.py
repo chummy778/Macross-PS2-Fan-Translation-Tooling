@@ -172,10 +172,16 @@ def apply(blob, edits):
         if u is None:
             raise KeyError(f"no such string: {uid}")
         data = new.encode("shift_jis", "strict")
-        if len(data) > u.budget:
+        # The slot has to hold the text *and* its NUL terminator. A
+        # replacement that exactly fills the slot leaves no room for the
+        # terminator, and the game reads straight on into the next record --
+        # which is why captions could show the following record's 6-digit id
+        # glued to the end of the line.
+        if len(data) >= u.budget:
             raise ValueError(f"{uid}: {len(data)} bytes needs "
-                             f"{len(data) - u.budget} more than its "
-                             f"{u.budget}-byte slot")
+                             f"{len(data) - u.budget + 1} more than its "
+                             f"{u.budget}-byte slot leaves for text "
+                             f"(one byte is the NUL terminator)")
         b[u.offset:u.offset + len(data)] = data
         for i in range(u.offset + len(data), u.offset + u.budget):
             b[i] = 0

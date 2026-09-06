@@ -311,6 +311,23 @@ zero*. The space form is a designed case, not corruption.
 The pools are found by `tools/strtab.py`: the first table entry is also the
 table's own length, which makes them unambiguous to locate.
 
+### A slot must hold the text *and* its NUL terminator
+
+`Unit.budget` is the whole slot: the original bytes plus the padding that
+follows. The terminator lives in that padding, so a replacement may use at
+most `budget - 1` bytes. `text.apply` and `build.check_budgets` originally
+allowed `len(data) == budget`, which writes text over the last NUL and
+leaves the string unterminated. The game then reads straight on into the
+next record and draws its six-digit id glued to the end of the line --
+on screen, `We're hit!021072Damage!`.
+
+It is easy to miss because everything else looks right: the bytes are
+correct, the read-back verification passes (it reads the same slot), and
+only the *neighbouring* string is visibly wrong. 153 strings were affected,
+38 of them in the hand-checked baseline that predates the script pass.
+
+Rule: **a replacement must be strictly shorter than its budget.**
+
 ### Pool offset tables are **not** sorted
 
 The obvious extra check on a candidate table — "the offsets should ascend" —

@@ -133,6 +133,30 @@ Nothing here blocks the build. Everything here shipped on a stated default.
     leading marker glyph is non-ASCII, which C7 forbids in the shipped file,
     so it ships unchanged rather than losing the marker.
 
+## Found by playtesting (2026-09-05, second pass)
+
+18. **Unterminated strings -- FIXED.** A replacement that exactly filled its
+    byte budget left no room for the NUL terminator, so the game read on
+    into the next record and drew its six-digit voice id on the end of the
+    line. 153 strings affected, 38 of them in the hand-checked baseline.
+    Root cause fixed in `text.apply` and `build.check_budgets`; all 153
+    shortened. Verified by reading the strings back out of EE RAM.
+
+19. **The briefing box holds two lines, not three -- FIXED.** Briefing and
+    promotion strings were written to three lines; the third was silently
+    dropped on screen. 42 strings reflowed to two lines of 48. The Global
+    Report box does take three lines; that surface was correct.
+
+20. **Japanese remains in files this patcher does not touch -- NOT FIXED.**
+    `RSLT.MRG`, `JISUCST.MRG`, `MENU_AUTH.CMP`, `MENU_AUTH_RSLT.CMP` and the
+    `GLB_AUTH_*` / `BRF_AUTH_*` cutscene-authoring files together hold about
+    1,100 characters of real prose. `docs/FORMATS.md` claims the `*_AUTH_*`
+    files "hold no text"; that is wrong. The build pipeline only ever writes
+    `BOOTDAT.CMP`, so reaching these needs a second patch path: decompress,
+    edit, recompress and write back a different member of `JPN.CVM`. Ids
+    would also need a file-qualified form. This is the mission-select and
+    results-screen Japanese a player still sees.
+
 ## Still open
 
 17. **The runtime-assembled radio fragments (item 1 above) remain
