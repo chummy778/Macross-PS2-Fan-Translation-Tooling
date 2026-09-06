@@ -19,13 +19,21 @@ import zipfile
 sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 from pine import Pine, PineError
 
-STATES = os.path.expanduser("~/Library/Application Support/PCSX2/sstates")
+# ARMSX2 and PCSX2 keep separate data roots, and the project uses ARMSX2.
+# Look in both, newest wins -- hardcoding one silently reports "no save state
+# appeared" while the emulator is happily writing them somewhere else.
+STATE_DIRS = [os.path.expanduser(d) for d in (
+    "~/Library/Application Support/ARMSX2/sstates",
+    "~/Library/Application Support/PCSX2/sstates",
+)]
+STATES = STATE_DIRS[0]
 
 
 def newest_state(before):
     """The .p2s written since `before`, waiting briefly for it to appear."""
     for _ in range(60):
-        cands = [p for p in glob.glob(os.path.join(STATES, "*.p2s"))
+        cands = [p for d in STATE_DIRS
+                 for p in glob.glob(os.path.join(d, "*.p2s"))
                  if os.path.getmtime(p) > before - 1]
         if cands:
             newest = max(cands, key=os.path.getmtime)
@@ -45,7 +53,7 @@ def capture(out_png, slot=1):
     p.save_state(slot)
     state = newest_state(t0)
     if not state:
-        raise RuntimeError(f"no save state appeared in {STATES}")
+        raise RuntimeError("no save state appeared in " + " or ".join(STATE_DIRS))
     with zipfile.ZipFile(state) as z:
         names = [n for n in z.namelist() if n.lower().endswith(".png")]
         if not names:
