@@ -8,6 +8,11 @@ Tooling for an English fan translation of **Chou Jikuu Yousai Macross**
 documentation for creating a translation patch for the game with minimal technical knowledge. You supply your own copy of the game; everything Japanese is extracted on your machine and never
 committed.
 
+## See it running
+
+[**Watch the translation in action**](https://www.youtube.com/watch?v=5afk6zPmE1g) — the patched
+game, playing.
+
 ## What works
 
 - Every string in the game's text file is found, edited and written back —
@@ -46,7 +51,8 @@ measured by `SND_GetVoicePlayTime`. **1,811 lines** are affected.
 
 Same scene, same input, unmodified disc on the left and a build from this
 tooling on the right. (These frames predate the full script pass, so the
-exact wording differs slightly from what ships today.)
+exact wording differs slightly from what ships today — see the
+[video](https://www.youtube.com/watch?v=5afk6zPmE1g) for the current build.)
 
 | Before | After |
 |---|---|
