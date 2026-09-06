@@ -1,12 +1,37 @@
-# Macross: English translation tooling
+# Macross (PS2): fan-translation tooling, and a playable English patch
 
-Tooling for an English fan translation of **Chou Jikuu Yousai Macross**
-(超時空要塞マクロス, PS2, SLPM-65405, Sega AM2 / Bandai, 2003).
+Two things in one repository, for **Chou Jikuu Yousai Macross**
+(超時空要塞マクロス, PS2, SLPM-65405, Sega AM2 / Bandai, 2003):
 
-> **Disclaimer:** This repo was developed by a coding AI agent (Claude
-> Opus/Sonnet 5). **This repository contains no game data and no game script.** It ships tools and
-documentation for creating a translation patch for the game with minimal technical knowledge. You supply your own copy of the game; everything Japanese is extracted on your machine and never
-committed.
+1. **Tooling** to build an English patch from your own copy of the disc.
+   It finds every string in the game, hands them to you as a spreadsheet or
+   a GUI, and writes a patched ISO back — checking each line against its
+   byte budget first and reading every one back out of the finished image.
+2. **A complete translation of the whole game**, shipped as an opt-in layer.
+   Built with `--mtl`, the result is fully translated and playable end to
+   end: script, briefings, in-mission radio, the Global Report narration,
+   menus, mission objectives, and the system messages inside the executable.
+
+> **The translation is machine-produced (MTL).** An AI wrote it, not a human
+> translator, and nobody who reads Japanese has reviewed a line of it. It is
+> playable, internally consistent, and checked against the game's own text
+> boxes — and it can still be fluently, confidently wrong in ways nothing in
+> this repository can detect. Treat it as a solid draft, not a finished
+> localisation.
+
+**Translators are welcome to replace it — that is the point of the tooling.**
+The hard part of a project like this is usually the disc, the compression and
+the pointer tables, and that part is done. A human translator can open a
+workbook and start writing. [`translation/artifacts/`](translation/artifacts/)
+carries the brief, story bible, glossary, voice cards, query log and deferred
+register the machine pass worked against, so you inherit its decisions and its
+open questions rather than a blank page — and you are free to overrule any of
+it.
+
+> **No game data lives here.** This repository ships no game data, no artwork
+> and no script. You supply your own disc; everything Japanese is extracted on
+> your machine and is never committed. The tooling itself was written by a
+> coding AI agent (Claude Opus/Sonnet 5).
 
 ## See it running
 
@@ -86,8 +111,15 @@ python3 tools/verify.py "Macross (Japan).iso"          # is this the right image
 python3 tools/make_workbook.py "Macross (Japan).iso"   # -> work/workbook.csv
 python3 tools/editor.py                                # translate (or use a spreadsheet)
 python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso"
-python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso" --subtitles
+
+# the full translation -- add --mtl. This is the playable English game:
+python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso" --mtl --subtitles
 ```
+
+Without `--mtl` you get the 290 hand-checked UI strings only, and the story
+stays Japanese. `--subtitles` additionally shows the in-mission radio the game
+otherwise only speaks; since much of the script *is* that radio traffic, it is
+worth having on.
 
 `make_workbook.py` extracts the Japanese from *your* disc and seeds the
 English column from `translation/english.json`, so existing work shows up
