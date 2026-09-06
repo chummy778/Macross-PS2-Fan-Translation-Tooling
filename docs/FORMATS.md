@@ -309,7 +309,43 @@ followed by a compare against `0x20`, i.e. *if byte 3 is a space, the index is
 zero*. The space form is a designed case, not corruption.
 
 The pools are found by `tools/strtab.py`: the first table entry is also the
-table's own length, which makes them unambiguous to locate. Offsets point at
+table's own length, which makes them unambiguous to locate.
+
+### Pool offset tables are **not** sorted
+
+The obvious extra check on a candidate table — "the offsets should ascend" —
+is wrong, and cost 88 live strings. A table may point several entries at the
+same string, and may point back at a string it already used, so the list
+dips. Requiring `offs == sorted(offs)` silently discarded the pool at
+`0x0285fc` that holds **every mission objective**, which is why the pause
+menu still rendered Japanese long after the script was translated.
+
+What actually holds, and is what `strtab.py` checks now:
+
+* `off0` is the table's own byte length, so the first string begins
+  immediately after the table;
+* no offset points back inside the table;
+* **every offset lands on a string start** — the byte before it is the NUL
+  that ended the previous string.
+
+The last of these is the real invariant sortedness was standing in for, and
+it is far stronger: random data almost never satisfies it.
+
+Because entries may repeat, `tools/text.py` deduplicates pool units by
+offset. Two entries pointing at one string are one string; exposing both
+would let two different English texts be written to the same bytes, and the
+second would silently win. There were 20 such collisions.
+
+### A Shift-JIS byte scan is not a text census
+
+Worth repeating inside a single file, not just across files. Scanning
+`BOOTDAT` for byte pairs in the Shift-JIS lead-byte range suggests about
+5,900 characters of text are unaccounted for. Nearly all of it is IEEE-754
+floats and 16-bit coordinate pairs that happen to decode — the same trap
+that makes a naive scan "find" text in 323 files. Screen by **hiragana
+density** before believing any such number. Screened that way, the real
+figure was 1,058 characters, and after the `strtab.py` fix no prose is
+uncovered at all. Offsets point at
 string *starts*, so in-place edits within budget need no fixups.
 
 `STR_GetIdx` parses only the **last three digits** of a record's 6-digit id

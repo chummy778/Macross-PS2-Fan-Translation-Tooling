@@ -38,7 +38,24 @@ def _string_at(d, o):
 
 
 def pools(d, min_entries=4):
-    """Every plausible [offsets][strings] pool, as (base, [strings])."""
+    """Every plausible [offsets][strings] pool, as (base, end, [strings]).
+
+    **Offsets are not sorted.** A table may point several of its entries at
+    the same string, and it may point back at a string it already used, so
+    the list dips. Requiring `offs == sorted(offs)` looks like a cheap
+    sanity check and is in fact a content assumption: it throws away every
+    pool that reuses a string, which here is most of them -- 1,368 runs and
+    about 5,930 characters of live text, including the mission objectives.
+
+    What actually holds, and is checked instead:
+
+    * `off0` is the table's own byte length, so the first string starts
+      immediately after the table;
+    * every offset points into the string area, never back into the table;
+    * every offset lands on a string *start* -- the byte before it is the
+      NUL that ended the previous string. This is the structural invariant
+      that sortedness was standing in for, and it is much stronger.
+    """
     out = []
     covered = set()
     for base in range(0, len(d) - 16, 4):
@@ -51,9 +68,13 @@ def pools(d, min_entries=4):
             continue
         n = first // 4
         offs = struct.unpack_from(f"<{n}I", d, base)
-        if list(offs) != sorted(offs):
+        # every entry points into the string area, in bounds
+        if any(o < first for o in offs):
             continue
         if any(base + o >= len(d) for o in offs):
+            continue
+        # every entry lands on a string start, not mid-string
+        if any(o != first and d[base + o - 1] != 0 for o in offs):
             continue
         strs = [_string_at(d, base + o) for o in offs]
         if any(s is None for s in strs):
@@ -62,7 +83,9 @@ def pools(d, min_entries=4):
             continue
         if not any(any(c > "\x7f" for c in s) for s in strs):
             continue          # want real text, not a table of empty strings
-        end = base + offs[-1] + len(strs[-1].encode("shift_jis")) + 1
+        # unsorted, so the end is the furthest string, not the last entry
+        last = max(range(len(offs)), key=lambda i: offs[i])
+        end = base + offs[last] + len(strs[last].encode("shift_jis")) + 1
         out.append((base, end, strs))
         covered.update(range(base, end))
     return out

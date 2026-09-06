@@ -86,10 +86,18 @@ def units(blob):
     for base, end, strs in strtab.pools(blob):
         n = struct.unpack_from("<I", blob, base)[0] // 4
         offs = struct.unpack_from(f"<{n}I", blob, base)
+        seen = set()
         for i, (o, s) in enumerate(zip(offs, strs)):
             start = base + o
             if start in rec_starts or not s:
                 continue          # already exposed as a record
+            # A table may point several entries at one string. That is one
+            # string, not several: exposing it twice would let a translator
+            # write two different English texts to the same bytes, and the
+            # second would silently win. Keep the first entry's id.
+            if start in seen:
+                continue
+            seen.add(start)
             raw = len(s.encode("shift_jis"))
             # room is the string plus the NULs before the next string starts
             nxt = min((base + p for p in offs if base + p > start), default=end)
