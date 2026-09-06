@@ -34,17 +34,30 @@ FIELDS = ["id", "kind", "speaker", "budget_bytes", "caption",
           "japanese", "english", "notes"]
 
 
-def load_english(path):
-    if not os.path.exists(path):
-        return {}
-    return json.load(open(path, encoding="utf-8"))
+def load_english(paths):
+    """Merge English layers in order; later layers win.
+
+    The machine translation lives in its own file so it never contaminates
+    the hand-checked baseline. Seeding the workbook from both is opt-in.
+    """
+    if isinstance(paths, str):
+        paths = [paths]
+    out = {}
+    for p in paths:
+        if os.path.exists(p):
+            out.update(json.load(open(p, encoding="utf-8")))
+    return out
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("iso")
     ap.add_argument("-o", "--out", default=os.path.join(ROOT, "work/workbook.csv"))
-    ap.add_argument("--english", default=os.path.join(ROOT, "translation/english.json"))
+    ap.add_argument("--english", action="append", metavar="JSON",
+                    help="English layer to seed from; repeatable. "
+                         "Defaults to translation/english.json.")
+    ap.add_argument("--mtl", action="store_true",
+                    help="also seed from translation/english-mtl.json")
     ap.add_argument("--all", action="store_true",
                     help="include strings that are already English")
     args = ap.parse_args()
@@ -54,7 +67,10 @@ def main():
         print("\n".join(lines))
         sys.exit("this is not the supported image; refusing to extract")
 
-    en = load_english(args.english)
+    layers = args.english or [os.path.join(ROOT, "translation/english.json")]
+    if args.mtl:
+        layers.append(os.path.join(ROOT, "translation/english-mtl.json"))
+    en = load_english(layers)
     us = gametext.units(script_blob(args.iso))
     if not args.all:
         us = [u for u in us if u.needs_translation]

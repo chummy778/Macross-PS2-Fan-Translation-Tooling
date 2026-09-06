@@ -58,12 +58,20 @@ is then played. A row number proves the right text reached the right place; a
 generic filler proves only that something rendered. This is what caught both
 a 50% undercount of the script and a boot hang.
 
-**C9 — Ship the UI, not the script.** Functional strings — menus, prompts,
+**C9 — Ship the UI, not the script.** ~~Functional strings — menus, prompts,
 stage names, difficulty labels, and the HUD/radio vocabulary — are translated
-properly and stay, so the game is navigable and playable in English out of
-the box. The story script is a human translator's job and is deliberately
-left undone. Screenshots may show demonstration lines that are not shipped;
-say so where they appear.
+properly and stay. The story script is a human translator's job and is
+deliberately left undone.~~ **Partly superseded.** The hand-checked UI/HUD baseline still
+ships on its own in `translation/english.json` and is what a plain build
+uses. The full script has since been **machine translated** into a separate
+opt-in layer, `translation/english-mtl.json`, applied with `--mtl`. It has
+had no human Japanese review and is labelled as such wherever it appears. What
+survives of C9 is its real point: *the script is not filler*. It was
+translated in scene context, against a brief, a bible, a glossary and voice
+cards, with every ambiguity logged rather than resolved silently, and it is
+handed over with its own deferred register. C7 still holds absolutely —
+`translation/english.json` contains zero CJK and no Japanese source text, and
+neither do the artifacts.
 
 **C10 — Identify the image before touching it.** A version check runs before
 extraction and before patching, and hashes the files the patch depends on
@@ -95,6 +103,12 @@ the parser here was corrected mid-project and gained 660 records.
 - Emulator fully scriptable: boot, memory, input, screenshots, savestate
   disassembly and call stacks
 - End-to-end patcher with verification, and a translation editor
+- The full script machine-translated into a separate opt-in layer
+  (`translation/english-mtl.json`, 2,538 strings), with the brief, bible,
+  glossary, voice cards, query log, deferred register and review record
+  shipped alongside in `translation/artifacts/`. No human Japanese review.
+- Pool parser corrected: offset tables are not sorted, and the old check
+  silently discarded every mission objective in the game
 - Spoken radio dialogue subtitled — 1,811 lines, one byte each, no code patch
 - The container's size ceiling removed: `JPN.CVM` is rebuilt and relocated
   when the script outgrows its 97 sectors, so no translation has to be cut
@@ -102,7 +116,9 @@ the parser here was corrected mid-project and gained 660 records.
 
 ## Not done
 
-- The script itself. That is deliberate (C9).
+- **Playtesting the translation.** Nothing in the script pass has been seen
+  rendered. Byte budgets and line geometry are checked mechanically on every
+  build; geometry measured off screenshots is not geometry observed.
 - Textures: stage title cards, logo, 2D menu art (TIM2). Art job, out of scope.
 - Growing a string beyond its slot. Not needed at 2.12x, and would require
   rewriting the pool offset tables.

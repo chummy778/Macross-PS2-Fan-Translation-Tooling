@@ -45,9 +45,8 @@ measured by `SND_GetVoicePlayTime`. **1,811 lines** are affected.
 ### Before / after
 
 Same scene, same input, unmodified disc on the left and a build from this
-tooling on the right. (The *dialogue* in these frames was translated to
-demonstrate the pipeline and is not part of the shipped translation — see
-below.)
+tooling on the right. (These frames predate the full script pass, so the
+exact wording differs slightly from what ships today.)
 
 | Before | After |
 |---|---|
@@ -95,19 +94,56 @@ confirm each string really arrived.
 
 ## What is translated here
 
-`translation/english.json` carries **290 strings** — enough to navigate and
-play the game in English:
+Two files, kept deliberately apart.
 
-- **All the menus**: stage and track names, pause and confirmation menus,
-  difficulty labels, save/load prompts, controller warnings. (Several menus
-  were already English on the disc.)
-- **233 HUD and radio strings**: damage and status callouts, enemy contact
-  and bearings, clock positions, directions, mission orders, squadron names,
-  and the tutorial's button prompts.
+### `translation/english.json` — 290 strings, hand-checked
 
-**The story script is deliberately not translated here.** That is a human
-translator's job, and this repository exists to make that job possible, not
-to do it badly. **2,449 lines are waiting in the workbook.**
+The minimal playability translation that has always shipped here: menus,
+stage and track names, difficulty labels, save/load prompts, controller
+warnings, and the HUD and radio vocabulary. Enough to navigate and play the
+game in English. This is what a plain `build.py` uses, and it is unchanged.
+
+### `translation/english-mtl.json` — 2,538 strings, **machine translation**
+
+> ⚠️ **This is a machine translation (MTL).** It was produced by an AI
+> (Claude Opus 5), not by a human translator, and **no human who reads
+> Japanese has checked a single line of it.** It is fluent, it is
+> internally consistent, and it may still be confidently wrong in ways
+> nothing in this repository can detect. Treat it as a playable draft and a
+> starting point for a human pass — not as a finished localisation.
+
+It covers the whole story script: mission briefings, in-mission radio
+dialogue, the training course, promotion and trading-card scenes, the
+Zentradi transmissions, the Global Report narration, and the mission
+objectives in the pause menu.
+
+It is a **layer**, not a replacement — it contains only what it adds to the
+baseline, plus two vocabulary-consistency overrides. Opt in:
+
+```sh
+python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso" --mtl
+python3 tools/build.py "Macross (Japan).iso" "Macross (EN).iso" --mtl --subtitles
+python3 tools/make_workbook.py "Macross (Japan).iso" --mtl   # seed a workbook from it
+```
+
+Nine strings are left untranslated on purpose: the seven memory-card save
+titles (`str-027a9c-017`..`023`), whose renaming would orphan existing save
+data, and two developer markers with no translatable text.
+
+### How the MTL was produced
+
+Against a written method rather than line by line, and the method ships with
+it in [`translation/artifacts/`](translation/artifacts/): a brief, a story
+bible, a locked glossary, voice cards with an address matrix and quirk
+register, a query log sorted into internal/editor/developer lanes, a
+deferred register of known unknowns, and a record of what each review pass
+changed. A human translator picking this up should start there.
+
+**What was verified on screen**, in ARMSX2: the Global Report narration, the
+mission briefings, the promotion scenes, the in-mission subtitle window and
+the pause-menu objectives all render correctly, within their boxes, with the
+line breaks as written. **Not verified:** the runtime-assembled scramble
+calls — see `05-DEFERRED.md` item 17.
 
 ## Known limitations
 

@@ -41,10 +41,21 @@ TRUE = {"1", "on", "yes", "true", "y"}
 FALSE = {"0", "off", "no", "false", "n"}
 
 
-def load_edits(english_path, csv_path):
-    """(text edits, caption overrides) from the shipped English and a CSV."""
+def load_edits(english_paths, csv_path):
+    """(text edits, caption overrides) from English layers and a CSV.
+
+    `english_paths` is a list, applied in order, each layer overriding the
+    one before. That is how the machine translation is kept separate from
+    the hand-checked UI strings instead of being merged into them: the
+    baseline ships on its own, and `english-mtl.json` layers on top only
+    when the user asks for it.
+    """
+    if isinstance(english_paths, str):
+        english_paths = [english_paths]
     edits, caps = {}, {}
-    if os.path.exists(english_path):
+    for english_path in english_paths:
+        if not os.path.exists(english_path):
+            continue
         for uid, e in json.load(open(english_path, encoding="utf-8")).items():
             if e.get("en"):
                 edits[uid] = e["en"]
@@ -88,8 +99,12 @@ def main():
     ap.add_argument("iso")
     ap.add_argument("out")
     ap.add_argument("--csv", default=None)
-    ap.add_argument("--english",
-                    default=os.path.join(ROOT, "translation/english.json"))
+    ap.add_argument("--english", action="append", metavar="JSON",
+                    help="English layer; repeatable, later layers win. "
+                         "Defaults to translation/english.json.")
+    ap.add_argument("--mtl", action="store_true",
+                    help="also apply translation/english-mtl.json, the "
+                         "machine translation of the full script")
     ap.add_argument("--subtitles", action="store_true",
                     help="also caption the spoken in-mission radio dialogue")
     args = ap.parse_args()
@@ -105,7 +120,10 @@ def main():
     need_cricmp()
     before = os.path.getsize(args.iso)
     blob = script_blob(args.iso)
-    edits, caps = load_edits(args.english, args.csv)
+    layers = args.english or [os.path.join(ROOT, "translation/english.json")]
+    if args.mtl:
+        layers.append(os.path.join(ROOT, "translation/english-mtl.json"))
+    edits, caps = load_edits(layers, args.csv)
     if not edits and not (caps or args.subtitles):
         sys.exit("no translated lines found -- nothing to build")
 
