@@ -12,10 +12,8 @@ Sega AM2 / Bandai, 2003). Two things:
 > has checked a line of it. It can be fluently, confidently wrong. A good
 > draft, not a finished localisation.
 
-**Translators: replace it.** The disc format, compression and pointer tables
-are solved — open a workbook and write. The brief, glossary, voice cards and
-open questions are in [`translation/artifacts/`](translation/artifacts/);
-overrule any of it.
+**Translators: you are welcome to create a proper translation here.** There is
+an editor available to do so.
 
 > **No game data here.** No game data, artwork or script is committed. You
 > supply the disc; the Japanese is extracted on your machine. Tooling written
