@@ -1,37 +1,25 @@
 # Macross (PS2): fan-translation tooling, and a playable English patch
 
-Two things in one repository, for **Chou Jikuu Yousai Macross**
-(超時空要塞マクロス, PS2, SLPM-65405, Sega AM2 / Bandai, 2003):
+For **Chou Jikuu Yousai Macross** (超時空要塞マクロス, PS2, SLPM-65405,
+Sega AM2 / Bandai, 2003). Two things:
 
-1. **Tooling** to build an English patch from your own copy of the disc.
-   It finds every string in the game, hands them to you as a spreadsheet or
-   a GUI, and writes a patched ISO back — checking each line against its
-   byte budget first and reading every one back out of the finished image.
-2. **A complete translation of the whole game**, shipped as an opt-in layer.
-   Built with `--mtl`, the result is fully translated and playable end to
-   end: script, briefings, in-mission radio, the Global Report narration,
-   menus, mission objectives, and the system messages inside the executable.
+1. **Tooling.** Pull every string out of your own disc, edit it, build a
+   patched ISO back.
+2. **A full translation**, opt-in with `--mtl`. Script, menus, radio,
+   narration, objectives, system messages. Playable end to end.
 
-> **The translation is machine-produced (MTL).** An AI wrote it, not a human
-> translator, and nobody who reads Japanese has reviewed a line of it. It is
-> playable, internally consistent, and checked against the game's own text
-> boxes — and it can still be fluently, confidently wrong in ways nothing in
-> this repository can detect. Treat it as a solid draft, not a finished
-> localisation.
+> **The translation is machine-produced (MTL).** No human who reads Japanese
+> has checked a line of it. It can be fluently, confidently wrong. A good
+> draft, not a finished localisation.
 
-**Translators are welcome to replace it — that is the point of the tooling.**
-The hard part of a project like this is usually the disc, the compression and
-the pointer tables, and that part is done. A human translator can open a
-workbook and start writing. [`translation/artifacts/`](translation/artifacts/)
-carries the brief, story bible, glossary, voice cards, query log and deferred
-register the machine pass worked against, so you inherit its decisions and its
-open questions rather than a blank page — and you are free to overrule any of
-it.
+**Translators: replace it.** The disc format, compression and pointer tables
+are solved — open a workbook and write. The brief, glossary, voice cards and
+open questions are in [`translation/artifacts/`](translation/artifacts/);
+overrule any of it.
 
-> **No game data lives here.** This repository ships no game data, no artwork
-> and no script. You supply your own disc; everything Japanese is extracted on
-> your machine and is never committed. The tooling itself was written by a
-> coding AI agent (Claude Opus/Sonnet 5).
+> **No game data here.** No game data, artwork or script is committed. You
+> supply the disc; the Japanese is extracted on your machine. Tooling written
+> by a coding AI agent (Claude Opus/Sonnet 5).
 
 ## See it running
 
